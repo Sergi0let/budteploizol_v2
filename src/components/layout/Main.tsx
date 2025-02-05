@@ -11,7 +11,7 @@ export const Main = () => {
             гарантує високу якість, довговічність і ефективність.
           </p>
           <button className="w-fitt group inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out hover:bg-indigo-600 focus:shadow">
-            Взнати більше
+            Більше
           </button>
         </div>
         <div className="main-image flex items-center justify-center">

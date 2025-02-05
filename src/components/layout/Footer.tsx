@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="mt-10 flex w-full items-center justify-center bg-blue-50 pt-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col px-4 text-blue-600 md:w-2/3">
-        <div className="w-full text-7xl font-bold">
+        <div className="w-full text-2xl font-bold md:text-7xl">
           <h2 className="w-full md:w-2/3">
             Як ми можемо вам допомогти? Звяжіться з нами.
           </h2>
