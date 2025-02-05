@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-clamp {
+    display: -webkit-box; /* Використання flex-контейнера для багаторядкового обрізання */
+    -webkit-line-clamp: 2; /* Вказує кількість рядків (тут 3 рядки) */
+    -webkit-box-orient: vertical; /* Орієнтація контейнера по вертикалі */
+    overflow: hidden; /* Ховає зайвий текст */
+    text-overflow: ellipsis; /* Додає три крапки (...) після обрізання */
+  }
+  .icon-wrapper {
+    @apply flex size-8 items-center justify-center rounded-lg border text-zinc-900 transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+  }
+  .custom-wrapper .splide__arrow {
+    @apply flex size-8 items-center justify-center rounded-lg border text-zinc-900 transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+  }
+  .custom-wrapper .splide__arrow svg {
+    @apply !rotate-0;
+  }
+  .custom-wrapper .splide__pagination {
+    @apply translate-y-8;
+  }
+  .custom-wrapper .splide__pagination li .splide__pagination__page {
+    @apply bg-blue-200;
+  }
+  .custom-wrapper .splide__pagination li .splide__pagination__page.is-active {
+    @apply bg-blue-600;
+  }
+
+  /* Main block */
+  .main-image div {
+    background: url("/main/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    -webkit-mask-image: url("/main/splash.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    @apply h-[360px] w-[620px];
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
