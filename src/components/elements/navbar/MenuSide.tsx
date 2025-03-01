@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { categoryLinks, contactPrefix, contactsData, pageLinks } from "@/data";
-import { ContactEntityType, ContactType } from "@/types";
+import { ContactEntityType } from "@/types";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,9 +59,7 @@ export const MenuSide = () => {
                   className="block cursor-pointer px-4 py-2 text-sm capitalize transition-colors hover:bg-blue-600 hover:text-white md:text-base"
                   href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
                 >
-                  {contact.typeContact === ContactType.Phone
-                    ? `${contact.name} ${contact.position}`
-                    : contact.typeContact}
+                  {contact.typeContact}
                 </a>
               </li>
             ))}
