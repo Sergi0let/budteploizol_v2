@@ -29,7 +29,7 @@ const ProductPage = async ({
   } = dataDisplay[0];
 
   const isDiscounted = discount && discount?.percentage > 0;
-
+  console.log(image);
   return (
     <main className="px-4 py-6 md:py-9">
       <div className="container mx-auto max-w-7xl">

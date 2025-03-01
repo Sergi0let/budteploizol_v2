@@ -1,5 +1,7 @@
 export * from "./Card";
+export * from "./Categories";
 export * from "./CouroselList";
+export * from "./Features";
 export * from "./Footer";
 export * from "./ListItems";
 export * from "./Main";

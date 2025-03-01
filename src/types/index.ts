@@ -6,16 +6,16 @@ export type CategoryLinksType = {
 
 export enum ContactType {
   Phone = "phone",
+  Kyivstar = "kyivstar",
+  Vodafone = "vodafone",
   Whatsapp = "whatsapp",
   Telegram = "telegram",
   Viber = "viber",
 }
-
 export type ContactEntityType = {
   id: number;
   phone: string;
-  position: string | null;
-  name: string | null;
+
   typeContact: ContactType;
 };
 
@@ -45,19 +45,24 @@ export type DiscountType = {
 
 // Єдиний enum для категорій (маршрут)
 export enum Category {
-  Sudinia = "sudinia",
-  Kulimki = "kulimki",
+  Soundproofing = "soundproofing",
+  Mats = "mats",
+  Rolls = "rolls",
+  Tourism = "tourism",
 }
 
-// Об’єкт для відображення назв категорій
 export const CategoryDisplayNames: { [key in Category]: string } = {
-  [Category.Sudinia]: "Сидушки",
-  [Category.Kulimki]: "Килимки",
+  [Category.Soundproofing]: "Звукоізоляційні матеріали",
+  [Category.Mats]: "Спортивні мати",
+  [Category.Rolls]: "Рулони",
+  [Category.Tourism]: "Товари для відпочинку, спорту і туризму",
 };
 
 export const CategoryTitles: { [key in Category]: string } = {
-  [Category.Sudinia]: "Туристичне сидіння (піддупник, сідачка)",
-  [Category.Kulimki]: "Килимки для фітнесу, йоги, пілатесу",
+  [Category.Soundproofing]: "Матеріали для звукоізоляції",
+  [Category.Mats]: "Спортивні мати для фітнесу, йоги, пілатесу",
+  [Category.Rolls]: "Рулонні матеріали",
+  [Category.Tourism]: "Туристичні товари: килимки, сидушки, аксесуари",
 };
 
 // Оновлений тип продукту: використовуємо лише Category для зберігання маршруту,
@@ -67,7 +72,7 @@ export type ProductType = {
   category: Category;
   name: string;
   description: string;
-  dimensions: DimensionsType;
+  dimensions?: DimensionsType;
   layers?: string;
   unit: string;
   price: PriceType;
@@ -77,3 +82,7 @@ export type ProductType = {
   discount: DiscountType | null;
 };
 // end product type
+
+export type SvgProps = {
+  className: string;
+};

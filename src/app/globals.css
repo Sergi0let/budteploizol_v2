@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 87%
+  );
+}
+
 body {
   font-family: var(--font-montserrat), sans-serif;
 }
@@ -47,6 +55,26 @@ body {
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     @apply h-[360px] w-[620px];
+  }
+
+  .features {
+    overflow-x: auto;
+    @apply flex gap-2 rounded-lg border bg-white;
+  }
+  .features > li {
+    @apply relative !min-w-32 gap-4 px-3 py-2 lg:p-4;
+  }
+  .features > li:not(:last-child) {
+    @apply border-r;
+  }
+
+  .bg-category {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      140deg,
+      rgba(255, 255, 255, 1) 14%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }
 

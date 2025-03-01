@@ -1,3 +1,4 @@
+import { ContactsIcons } from "@/components/icons";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,8 +29,14 @@ export const ContactMenu = ({ className }: { className?: string }) => {
                 className="capitalize"
                 href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
               >
-                {contact.typeContact === ContactType.Phone
-                  ? contact.name
+                <ContactsIcons
+                  contactType={contact.typeContact}
+                  className="float-left mr-2 size-6"
+                />
+                {contact.typeContact === ContactType.Kyivstar ||
+                contact.typeContact === ContactType.Vodafone ||
+                contact.typeContact === ContactType.Phone
+                  ? contact.phone
                   : contact.typeContact}
               </a>
             </DropdownMenuItem>

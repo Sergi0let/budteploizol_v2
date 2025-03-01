@@ -30,7 +30,7 @@ export const BtnToCart = ({ id }: { id: number }) => {
   return (
     <button
       onClick={handleAddToCart}
-      className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-violet-600 md:size-14"
+      className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-blue-600 md:size-14"
     >
       <ShoppingCart className="size:4 text-white md:size-8" />
     </button>

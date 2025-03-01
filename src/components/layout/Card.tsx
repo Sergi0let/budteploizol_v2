@@ -48,7 +48,7 @@ export const Card = ({
   );
 
   return (
-    <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-lg border bg-white p-2 shadow-lg transition-all hover:shadow-xl sm:p-5">
+    <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-lg border bg-white p-2 shadow-sm transition-all sm:p-5">
       {isDiscounted && discount?.percentage !== 0 && (
         <span className="absolute right-0 top-0 z-10 rounded-lg rounded-ee-none rounded-ss-none bg-red-500 px-3 py-1 text-sm font-medium text-white">
           {discount?.percentage}%
@@ -99,7 +99,7 @@ export const Card = ({
         <div className="flex flex-col items-start gap-1">
           <button
             onClick={() => increaseItemQuantity(id)}
-            className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-violet-600 md:size-14"
+            className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-blue-600 md:size-14"
           >
             <ShoppingCart className="size:4 text-white md:size-8" />
           </button>
