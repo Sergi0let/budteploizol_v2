@@ -1,10 +1,11 @@
 export type SectionHeadingProps = {
   title: string;
+  className?: string;
 };
 
-const SectionHeading = ({ title }: SectionHeadingProps) => {
+const SectionHeading = ({ title, className = "" }: SectionHeadingProps) => {
   return (
-    <h2 className="flex items-center text-2xl font-medium text-zinc-800 md:text-3xl xl:text-4xl">
+    <h2 className={`flex items-center font-medium text-zinc-800 ${className}`}>
       <span className="mr-2 inline-block size-2 rounded-full bg-blue-600 md:mr-3 md:size-3" />
       {title}
     </h2>

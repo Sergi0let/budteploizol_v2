@@ -52,7 +52,10 @@ const Categories = ({ catData }: CategoriesProps) => {
   return (
     <section className="mb-7 px-4 md:mb-10">
       <div className="container mx-auto max-w-7xl py-7 md:py-9">
-        <SectionHeading title="Категорії товарів" />
+        <SectionHeading
+          title="Категорії товарів"
+          className="text-2xl md:text-3xl xl:text-4xl"
+        />
         <CategoriesList catData={catData} />
       </div>
     </section>

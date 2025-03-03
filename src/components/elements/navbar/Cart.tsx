@@ -16,6 +16,7 @@ import {
 import { products } from "@/data";
 import { formatPrice } from "@/lib/utils";
 import { ShoppingCart, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Cart() {
   const {
@@ -76,10 +77,12 @@ export default function Cart() {
                                 className="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0"
                               >
                                 <div className="shrink-0">
-                                  <img
+                                  <Image
                                     className="h-24 w-24 max-w-full rounded-lg object-contain"
-                                    src={item?.image[0]}
-                                    alt=""
+                                    src={`/products/${item?.image[0]}`}
+                                    alt={item?.name || " "}
+                                    width={200}
+                                    height={200}
                                   />
                                 </div>
                                 <div className="relative flex flex-1 flex-col justify-between">

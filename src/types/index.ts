@@ -1,3 +1,12 @@
+export type DeliveryInfoType = {
+  id: string;
+  imgUrl: string;
+  name: string;
+  type: string;
+  time: string;
+  cost: string;
+};
+
 export type CategorieType = {
   id: string;
   name: string;

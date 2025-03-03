@@ -1,8 +1,21 @@
-import { ProductSlider } from "@/components";
-import { products } from "@/data";
-import { calculateDiscountedPrice, formatPrice } from "@/lib/utils";
+import {
+  CharacteristicsInfo,
+  DeliveryInfo,
+  ProductCartActions,
+  ProductSlider,
+  SectionHeading,
+} from "@/components";
+import { deliveryData, products } from "@/data";
+import { formatPrice } from "@/lib/utils";
 import { ProductType } from "@/types";
-import { ShoppingCart } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  CircleCheck,
+  CircleX,
+  ShoppingCart,
+  Wallet,
+} from "lucide-react";
+import Link from "next/link";
 
 const ProductPage = async ({
   params,
@@ -11,7 +24,9 @@ const ProductPage = async ({
 }) => {
   const paramsData = (await params).id as string;
   const [slugId] = paramsData.split("/");
-  const dataDisplay: ProductType = products.find((item) => item.id === slugId);
+  const dataDisplay: ProductType | undefined = products.find(
+    (item) => item.id === slugId,
+  );
 
   if (!dataDisplay) return <div>Product not found</div>;
 
@@ -19,93 +34,130 @@ const ProductPage = async ({
     // bestSales,
     // category,
     description,
-    // id,
+    id,
     image,
     name,
     price,
-    // dimensions,
-    discount,
-    // isAvailable,
-    unit,
+    dimensions,
+    // discount,
+    isAvailable,
+    // unit,
     // layers,
   } = dataDisplay;
 
-  const isDiscounted = discount && discount?.percentage > 0;
+  // const isDiscounted = discount && discount?.percentage > 0;
 
   return (
     <main className="bg-sky-50 px-4 py-6 md:py-9">
       <div className="container mx-auto max-w-7xl">
-        <div className="-mx-4 flex flex-col md:flex-row">
-          <div className="w-1/2">
+        <div className="flex flex-col gap-2 lg:flex-row">
+          <div className="lg:sticky lg:top-16 lg:h-full lg:w-1/2">
             <ProductSlider productImages={image} />
           </div>
-          <div className="px-4 md:flex-1">
-            <h1 className="mb-2 text-2xl font-bold leading-tight tracking-tight text-gray-800 md:text-3xl">
+          <div className="space-y-2 md:flex-1 lg:w-1/2">
+            <h1 className="rounded-lg bg-white p-6 text-2xl font-medium text-zinc-800 md:text-3xl">
               {name}
             </h1>
-            <p className="text-sm text-gray-500">
-              By{" "}
-              <a href="#" className="text-blue-600 hover:underline">
-                ABC Company
-              </a>
-            </p>
-            <div className="my-4 flex flex-col gap-4">
-              <div className="space-y-1">
-                {isDiscounted ? (
-                  <>
-                    <p className="text-sm text-gray-500 line-through">
+
+            <div className="rounded-lg bg-white p-6">
+              <div className="flex items-center justify-between gap-2">
+                {isAvailable ? (
+                  <div className="font-medium text-green-500">
+                    <CircleCheck className="float-left mr-1" /> В наявності
+                  </div>
+                ) : (
+                  <div className="font-medium text-red-500">
+                    <CircleX className="float-left mr-1" /> Не в наявності
+                  </div>
+                )}
+                <div className="text-zinc-400">
+                  Артикул: <b className="font-medium text-zinc-800">RGGG3510</b>
+                </div>
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-3">
+                <div className="flex items-center">
+                  {/* {isDiscounted ? (
+                    <>
+                      <p className="text-sm text-gray-300 line-through">
+                        {formatPrice(price.retail.withVAT)}
+                      </p>
+                      <p className="text-base font-bold text-zinc-800 sm:text-2xl">
+                        {formatPrice(
+                          calculateDiscountedPrice(
+                            price.retail.withVAT,
+                            discount.percentage,
+                          ),
+                        )}
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-base font-bold text-zinc-800 sm:text-2xl">
                       {formatPrice(price.retail.withVAT)}
                     </p>
-                    <p className="text-base font-bold text-gray-900 sm:text-2xl">
-                      {formatPrice(
-                        calculateDiscountedPrice(
-                          price.retail.withVAT,
-                          discount.percentage,
-                        ),
-                      )}
-                    </p>
-                  </>
-                ) : (
-                  <p className="text-base font-bold text-gray-900 sm:text-2xl">
+                  )} */}
+                  <p className="text-3xl font-bold text-zinc-800">
                     {formatPrice(price.retail.withVAT)}
                   </p>
-                )}
-              </div>
-              <p className="text-gray-500">{description}</p>
-              <div className="flex space-x-4 py-4">
-                <div className="relative">
-                  <div className="absolute left-0 right-0 block pt-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-400">
-                    {unit}
-                  </div>
-                  <select className="flex h-14 cursor-pointer appearance-none items-end rounded-lg border border-gray-200 pb-1 pl-4 pr-8">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                  <svg
-                    className="absolute bottom-0 right-0 mb-2 mr-2 h-5 w-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 9l4-4 4 4m0 6l-4 4-4-4"
-                    />
-                  </svg>
                 </div>
-                <button
-                  type="button"
-                  className="h-14 rounded-lg bg-blue-600 px-6 py-2 font-medium text-white transition-colors hover:bg-indigo-500"
+                <div className="self-center">
+                  <ProductCartActions
+                    className="w-fit justify-self-end md:justify-self-center"
+                    id={id}
+                  />
+                </div>
+                <Link
+                  href="/cart"
+                  className="col-span-full mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 text-white transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600 md:col-auto md:mt-0"
                 >
-                  В корзину <ShoppingCart className="float-right ml-2" />
-                </button>
+                  <ShoppingCart className="mr-1" />
+                  <span>В кошик</span>
+                </Link>
               </div>
+            </div>
+
+            <div className="rounded-lg bg-white p-6">
+              <SectionHeading
+                title="Доставка"
+                className="text-2xl font-medium uppercase text-zinc-800"
+              />
+              <DeliveryInfo data={deliveryData} className="mt-4" />
+            </div>
+
+            <div className="rounded-lg bg-white p-6">
+              <SectionHeading
+                title="Оплата"
+                className="text-2xl font-medium uppercase text-zinc-800"
+              />
+
+              <ul className="mt-4 flex flex-wrap gap-3">
+                <li className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2">
+                  <Wallet className="mr-1 text-blue-600" />
+                  <span className="font-medium text-zinc-800">
+                    Оплата при отриманні
+                  </span>
+                </li>
+                <li className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2">
+                  <BriefcaseBusiness className="mr-1 text-blue-600" />
+                  <span className="font-medium text-zinc-800">
+                    Безготівковий розрахунок
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg bg-white p-6">
+              <SectionHeading
+                title="Опис"
+                className="text-2xl font-medium uppercase text-zinc-800"
+              />
+              <p className="mt-4 text-zinc-700">{description}</p>
+            </div>
+            <div className="rounded-lg bg-white p-6">
+              <SectionHeading
+                title="Характеристики"
+                className="text-2xl font-medium uppercase text-zinc-800"
+              />
+              <CharacteristicsInfo data={dimensions} className="mt-4" />
             </div>
           </div>
         </div>

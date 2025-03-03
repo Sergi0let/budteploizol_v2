@@ -3,10 +3,10 @@ import {
   CategoryLinksType,
   ContactEntityType,
   ContactType,
+  DeliveryInfoType,
   ProductCategory,
   ProductType,
 } from "@/types";
-
 export const pageLinks: CategoryLinksType[] = [
   {
     id: 5,
@@ -1640,4 +1640,23 @@ export const products: ProductType[] = [
   //   isAvailable: true,
   //   discount: { percentage: 0, validUntil: null },
   // }
+];
+
+export const deliveryData: DeliveryInfoType[] = [
+  {
+    id: "1",
+    imgUrl: "/logo/nova-poshta.webp",
+    name: "Nova Poshta",
+    type: "До відділення",
+    time: "1-5 днів",
+    cost: "За тарифами перевізника",
+  },
+  {
+    id: "2",
+    imgUrl: "/logo/ukrposhta.webp",
+    name: "Укрпошта",
+    type: "До відділення",
+    time: "1-5 днів",
+    cost: "За тарифами перевізника",
+  },
 ];
