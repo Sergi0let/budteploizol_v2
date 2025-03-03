@@ -1,6 +1,7 @@
 import { ProductSlider } from "@/components";
 import { products } from "@/data";
 import { calculateDiscountedPrice, formatPrice } from "@/lib/utils";
+import { ProductType } from "@/types";
 import { ShoppingCart } from "lucide-react";
 
 const ProductPage = async ({
@@ -9,9 +10,10 @@ const ProductPage = async ({
   params: Promise<{ slug: string; id: string }>;
 }) => {
   const paramsData = (await params).id as string;
-  const parts = paramsData.split("/");
-  const productId = +parts[parts.length - 1];
-  const dataDisplay = products?.filter((item) => item.id === productId);
+  const [slugId] = paramsData.split("/");
+  const dataDisplay: ProductType = products.find((item) => item.id === slugId);
+
+  if (!dataDisplay) return <div>Product not found</div>;
 
   const {
     // bestSales,
@@ -26,15 +28,17 @@ const ProductPage = async ({
     // isAvailable,
     unit,
     // layers,
-  } = dataDisplay[0];
+  } = dataDisplay;
 
   const isDiscounted = discount && discount?.percentage > 0;
-  console.log(image);
+
   return (
-    <main className="px-4 py-6 md:py-9">
+    <main className="bg-sky-50 px-4 py-6 md:py-9">
       <div className="container mx-auto max-w-7xl">
         <div className="-mx-4 flex flex-col md:flex-row">
-          <ProductSlider productImages={image} />
+          <div className="w-1/2">
+            <ProductSlider productImages={image} />
+          </div>
           <div className="px-4 md:flex-1">
             <h1 className="mb-2 text-2xl font-bold leading-tight tracking-tight text-gray-800 md:text-3xl">
               {name}
@@ -111,20 +115,3 @@ const ProductPage = async ({
 };
 
 export default ProductPage;
-{
-  /* <div className="container mx-auto max-w-7xl">
-  <h1 className="mb-5 mt-6 text-2xl font-medium md:mb-6 md:mt-8 md:text-3xl">
-    {CategoryTitles[categorySlug]} ({dataDispay.length})
-  </h1>
-  <figure className="full mb-6 max-h-[440px] overflow-hidden rounded-lg md:mb-8">
-    <Image
-      className="size-full object-contain"
-      src={`/category/${categorySlug}.jpg`}
-      alt={categorySlug}
-      width="1440"
-      height="440"
-    />
-  </figure>
-  <ListItems items={dataDispay} />
-</div>; */
-}

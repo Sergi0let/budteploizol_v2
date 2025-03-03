@@ -1,28 +1,30 @@
-import { Categories, Features, Main, PreviewList } from "@/components";
+import { Categories, Features, Hero, PreviewList } from "@/components";
 import { products } from "@/data";
+import { categoryListData } from "@/data/category";
 import { Category } from "@/types";
 
 export default function Home() {
   const kulimki = products.filter(
-    (product) => product.category === Category.Rolls,
+    (product) => product.category === Category.Sidyshki,
   );
   const sudinia = products.filter(
-    (product) => product.category === Category.Tourism,
+    (product) => product.category === Category.Kulumki,
   );
 
   return (
-    <main className="flex-1 space-y-16 py-10 md:space-y-20">
-      <Main />
+    <main className="flex-1">
+      {/* <Main /> */}
+      <Hero />
+      <Categories catData={categoryListData} />
       <Features />
-      <Categories />
       <PreviewList
         listItems={kulimki}
-        showAllLink={Category.Rolls}
-        title="Килимки для пікніка та туризму"
+        showAllLink={Category.Sidyshki}
+        title="Кулички для сидіння"
       />
       <PreviewList
         listItems={sudinia}
-        showAllLink={Category.Tourism}
+        showAllLink={Category.Kulumki}
         title="Туристичне сидіння (піддупник, сідачка)"
       />
     </main>

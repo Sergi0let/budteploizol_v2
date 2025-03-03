@@ -57,7 +57,7 @@ export const Card = ({
       <Link href={`/${category}/${id}`} className="group">
         <figure className="relative mb-4 max-h-[300px] overflow-hidden">
           <Image
-            src={`/${image[0]}`}
+            src={`/products/${image[0]}`}
             alt={name}
             width={200}
             height={200}
@@ -98,7 +98,7 @@ export const Card = ({
 
         <div className="flex flex-col items-start gap-1">
           <button
-            onClick={() => increaseItemQuantity(id)}
+            onClick={() => increaseItemQuantity(+id)}
             className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-blue-600 md:size-14"
           >
             <ShoppingCart className="size:4 text-white md:size-8" />

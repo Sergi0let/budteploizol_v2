@@ -34,24 +34,26 @@ const Features = () => {
     }
   };
   return (
-    <div className="ml-4 md:m-4">
-      <div className="container mx-auto max-w-7xl">
-        <ul className="features">
-          {dataFeatures.map(({ id, icon, description }) => (
-            <li key={id}>
-              <div>
-                <div className="max-w-fit rounded-full bg-blue-600 p-2">
-                  {Icon(icon)}
+    <div className="bg-sky-50">
+      <div className="ml-4 md:m-4">
+        <div className="container mx-auto max-w-7xl py-6">
+          <ul className="features">
+            {dataFeatures.map(({ id, icon, description }) => (
+              <li key={id}>
+                <div>
+                  <div className="max-w-fit rounded-full bg-blue-600 p-2">
+                    {Icon(icon)}
+                  </div>
                 </div>
-              </div>
-              <div className="mt-2 md:mt-4">
-                <div className="text-xs md:text-sm lg:text-base">
-                  <p>{description}</p>
+                <div className="mt-2 md:mt-4">
+                  <div className="text-xs md:text-sm lg:text-base">
+                    <p>{description}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
