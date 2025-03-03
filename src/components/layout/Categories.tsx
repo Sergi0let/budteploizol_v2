@@ -18,8 +18,9 @@ const CategoriesItem = ({ link, name, image, i }: CategorieItemType) => {
               className="absolute inset-0 size-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
               src={image}
               alt={name}
-              width={200}
-              height={200}
+              width={630}
+              height={220}
+              priority={true}
             />
           </div>
           <figcaption className="flex items-center gap-2 border-t p-3 md:p-5">

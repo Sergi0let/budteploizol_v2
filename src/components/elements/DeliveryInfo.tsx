@@ -34,7 +34,6 @@ const DeliveryInfo = ({ data, className = "" }: DeliveryInfoProps) => {
                       </div>
                     )}
                   </figure>
-                  <figcaption className="sr-only">{name}</figcaption>
                 </td>
                 <td className="py-4 pr-6">
                   <p className="text-nowrap text-zinc-800">{name}</p>
