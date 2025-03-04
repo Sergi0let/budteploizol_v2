@@ -1,3 +1,4 @@
+export * from "./BreadcrumbNavigation";
 export * from "./Card";
 export * from "./Categories";
 export * from "./CouroselList";

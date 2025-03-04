@@ -1,4 +1,5 @@
 import {
+  BreadcrumbNavigation,
   CharacteristicsInfo,
   DeliveryInfo,
   ProductCartActions,
@@ -7,7 +8,7 @@ import {
 } from "@/components";
 import { deliveryData, products } from "@/data";
 import { formatPrice } from "@/lib/utils";
-import { ProductType } from "@/types";
+import { CategoryDisplayNames, ProductType } from "@/types";
 import {
   BriefcaseBusiness,
   CircleCheck,
@@ -20,12 +21,11 @@ import Link from "next/link";
 const ProductPage = async ({
   params,
 }: {
-  params: Promise<{ slug: string; id: string }>;
+  params: { slug: string; id: string };
 }) => {
-  const paramsData = (await params).id as string;
-  const [slugId] = paramsData.split("/");
+  const { id: idSlug, slug } = params;
   const dataDisplay: ProductType | undefined = products.find(
-    (item) => item.id === slugId,
+    (item) => item.id === idSlug,
   );
 
   if (!dataDisplay) return <div>Product not found</div>;
@@ -50,8 +50,22 @@ const ProductPage = async ({
   return (
     <main className="bg-sky-50 px-4 py-6 md:py-9">
       <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col gap-2 lg:flex-row">
-          <div className="lg:sticky lg:top-16 lg:h-full lg:w-1/2">
+        <BreadcrumbNavigation
+          items={[
+            { label: "Головна", href: "/" },
+            { label: "Каталог", href: "/catalog" },
+            {
+              label:
+                CategoryDisplayNames[
+                  slug as keyof typeof CategoryDisplayNames
+                ] || "Невідома категорія",
+              href: `/catalog/${slug}`,
+            },
+            { label: "Товар" },
+          ]}
+        />
+        <div className="mt-4 flex flex-col gap-2 lg:flex-row">
+          <div className="lg:sticky lg:top-20 lg:h-full lg:w-1/2">
             <ProductSlider productImages={image} />
           </div>
           <div className="space-y-2 md:flex-1 lg:w-1/2">
@@ -107,7 +121,7 @@ const ProductPage = async ({
                 </div>
                 <Link
                   href="/cart"
-                  className="col-span-full mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 text-white transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600 md:col-auto md:mt-0"
+                  className="col-span-full mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0"
                 >
                   <ShoppingCart className="mr-1" />
                   <span>В кошик</span>

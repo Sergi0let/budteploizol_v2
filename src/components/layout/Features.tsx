@@ -34,7 +34,7 @@ const Features = () => {
     }
   };
   return (
-    <div className="bg-sky-50">
+    <div className="mb-7 bg-sky-50 md:mb-14">
       <div className="ml-4 md:m-4">
         <div className="container mx-auto max-w-7xl py-6">
           <ul className="features">

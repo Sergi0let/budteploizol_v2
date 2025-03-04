@@ -1,6 +1,6 @@
 export const Search = () => {
   return (
-    <form className="relative w-full">
+    <form className="relative w-full min-w-28 lg:w-fit">
       <label htmlFor="Search" className="sr-only">
         пошук
       </label>

@@ -66,8 +66,6 @@ export const categoryLinks: CategoryLinksType[] = [
   { id: 1, name: "Звукоізоляція", url: `/${Category.Soundproofing}` },
   { id: 2, name: "Спортивні мати", url: `/${Category.Mats}` },
   { id: 3, name: "Рулони", url: `/${Category.Rolls}` },
-  { id: 4, name: "Туристичні товари", url: `/${Category.Tourism}` },
-  { id: 5, name: "Туристичні килимки", url: `/${Category.Tourism}` },
 ];
 // export const products: ProductType[] = [
 //   // Товари категорії "Сидушки" (Category.Tourism)
@@ -1195,9 +1193,9 @@ export const products: ProductType[] = [
       retail: { withoutVAT: 6355, withVAT: 7626 },
     },
     image: ["IMG_6148.webp", "IMG_6061.webp"],
-    bestSales: false,
-    isAvailable: true,
-    discount: { percentage: 0, validUntil: null },
+    bestSales: true,
+    isAvailable: false,
+    discount: { percentage: 10, validUntil: null },
   },
   // {
   //   id: "sidyshki-",

@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 
-import { categoryLinks } from "@/data";
+import { categoryListData } from "@/data/category";
 
 export const Navigation = () => {
   return (
-    <nav className="hidden text-nowrap lg:block lg:space-x-2">
-      {categoryLinks.map(({ id, name, url }) => (
+    <nav className="hidden text-nowrap lg:flex">
+      {categoryListData.map(({ id, name, link }) => (
         <Link
           key={id}
-          href={url}
-          className="font-semi-bold rounded-md px-3 py-[11px] text-xs uppercase leading-none transition-colors hover:bg-blue-600 hover:text-blue-100 xl:text-sm"
+          href={`/catalog/${link}`}
+          className="font-semi-bold rounded-md p-2 text-xs uppercase leading-none transition-colors hover:bg-blue-600 hover:text-blue-100 xl:text-sm"
         >
           <span>{name}</span>
         </Link>

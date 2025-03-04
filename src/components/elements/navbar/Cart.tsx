@@ -15,7 +15,7 @@ import {
 } from "@/context/ShopingCartContext";
 import { products } from "@/data";
 import { formatPrice } from "@/lib/utils";
-import { ShoppingCart, X } from "lucide-react";
+import { Minus, Plus, ShoppingCart, X } from "lucide-react";
 import Image from "next/image";
 
 export default function Cart() {
@@ -95,7 +95,7 @@ export default function Cart() {
                                         {item?.category}
                                       </p>
                                     </div>
-                                    <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
+                                    <div className="mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:items-start sm:justify-end">
                                       <p className="w-20 shrink-0 text-base font-semibold text-gray-900 sm:order-2 sm:ml-8 sm:text-right">
                                         {formatPrice(
                                           (item?.quantity ?? 0) *
@@ -103,7 +103,37 @@ export default function Cart() {
                                         )}
                                       </p>
                                       <div className="sm:order-1">
-                                        <div className="mx-auto flex h-8 items-stretch text-gray-600">
+                                        <div className="flex h-12 items-center overflow-hidden rounded-lg border">
+                                          <button
+                                            className={`flex h-full min-w-10 items-center justify-center px-2 transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600 ${item?.quantity === 0 && "text-gray-400"}`}
+                                            onClick={() =>
+                                              decreaseItemQuantity(
+                                                item?.id ?? 0,
+                                              )
+                                            }
+                                            disabled={
+                                              item?.quantity === 0
+                                                ? true
+                                                : undefined
+                                            }
+                                          >
+                                            <Minus className="size-4" />
+                                          </button>
+                                          <span className="min-w-10 border-l border-r py-2 text-center text-lg font-medium">
+                                            {item?.quantity}
+                                          </span>
+                                          <button
+                                            className="flex h-full min-w-10 items-center justify-center px-2 text-center transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600"
+                                            onClick={() =>
+                                              increaseItemQuantity(
+                                                item?.id ?? 0,
+                                              )
+                                            }
+                                          >
+                                            <Plus className="size-4" />
+                                          </button>
+                                        </div>
+                                        {/* <div className="mx-auto flex h-8 items-stretch text-gray-600">
                                           <button
                                             onClick={() =>
                                               decreaseItemQuantity(
@@ -127,20 +157,20 @@ export default function Cart() {
                                           >
                                             +
                                           </button>
-                                        </div>
+                                        </div> */}
+                                      </div>
+                                      <div className="order-3 flex sm:bottom-0 sm:top-auto">
+                                        <button
+                                          type="button"
+                                          className="icon-wrapper"
+                                          onClick={() =>
+                                            removeItemFromCart(item?.id ?? 0)
+                                          }
+                                        >
+                                          <X />
+                                        </button>
                                       </div>
                                     </div>
-                                  </div>
-                                  <div className="absolute right-0 top-0 flex sm:bottom-0 sm:top-auto">
-                                    <button
-                                      type="button"
-                                      className="icon-wrapper"
-                                      onClick={() =>
-                                        removeItemFromCart(item?.id ?? 0)
-                                      }
-                                    >
-                                      <X />
-                                    </button>
                                   </div>
                                 </div>
                               </li>
@@ -159,7 +189,7 @@ export default function Cart() {
                         <div className="mt-6 text-center">
                           <button
                             type="button"
-                            className="group inline-flex w-full items-center justify-center rounded-md bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out hover:bg-indigo-600 focus:shadow"
+                            className="group inline-flex w-full items-center justify-center rounded-md bg-blue-600 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out hover:bg-sky-800 focus:shadow"
                           >
                             Оформити замовлення
                             <svg

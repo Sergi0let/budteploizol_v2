@@ -64,7 +64,6 @@ export enum Category {
   Soundproofing = "soundproofing",
   Mats = "mats",
   Rolls = "rolls",
-  Tourism = "tourism",
   Kulumki = "kulumki",
   Sidyshki = "sidyshki",
 }
@@ -73,7 +72,7 @@ export const CategoryDisplayNames: { [key in Category]: string } = {
   [Category.Soundproofing]: "Звукоізоляційні матеріали",
   [Category.Mats]: "Спортивні мати",
   [Category.Rolls]: "Рулони",
-  [Category.Tourism]: "Товари для відпочинку, спорту і туризму",
+
   [Category.Kulumki]: "Килимки",
   [Category.Sidyshki]: "Сидушки",
 };
@@ -82,7 +81,6 @@ export const CategoryTitles: { [key in Category]: string } = {
   [Category.Soundproofing]: "Матеріали для звукоізоляції",
   [Category.Mats]: "Спортивні мати для фітнесу, йоги, пілатесу",
   [Category.Rolls]: "Рулонні матеріали",
-  [Category.Tourism]: "Туристичні товари: килимки, сидушки, аксесуари",
   [Category.Kulumki]: "Килимки для туризму, спорту, фітнесу",
   [Category.Sidyshki]: "Сидушки для туризму, спорту, фітнесу",
 };

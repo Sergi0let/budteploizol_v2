@@ -1,34 +1,34 @@
-import { CategorieType } from "@/types";
+import { CategorieType, Category, CategoryDisplayNames } from "@/types";
 
 export const categoryListData: CategorieType[] = [
   {
     id: "1",
-    name: "Килимок сидіння",
+    name: CategoryDisplayNames[Category.Sidyshki],
     image: "/cat/1.webp",
-    link: "/",
+    link: `/${Category.Sidyshki}`,
   },
   {
     id: "2",
-    name: "Килимки туристичні",
+    name: CategoryDisplayNames[Category.Kulumki],
     image: "/cat/2.webp",
-    link: "/",
+    link: `/${Category.Kulumki}`,
   },
   {
     id: "3",
-    name: "Рулони",
+    name: CategoryDisplayNames[Category.Rolls],
     image: "/cat/3.webp",
-    link: "/",
-  },
-  {
-    id: "1",
-    name: "Звукоізоляційні матеріали",
-    image: "/cat/4.webp",
-    link: "/",
+    link: `/${Category.Rolls}`,
   },
   {
     id: "4",
-    name: "Мати",
+    name: CategoryDisplayNames[Category.Mats],
+    image: "/cat/4.webp",
+    link: `/${Category.Mats}`,
+  },
+  {
+    id: "5",
+    name: CategoryDisplayNames[Category.Soundproofing],
     image: "/cat/5.webp",
-    link: "/",
+    link: `/${Category.Soundproofing}`,
   },
 ];

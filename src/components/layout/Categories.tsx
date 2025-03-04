@@ -11,7 +11,7 @@ const CategoriesItem = ({ link, name, image, i }: CategorieItemType) => {
     <li
       className={`group overflow-hidden rounded-lg border ${i === 0 || i === 1 ? "min-[512px]:col-span-6" : "min-[512px]:col-span-6 md:col-span-4"}`}
     >
-      <Link href={link}>
+      <Link href={`/catalog/${link}`}>
         <figure>
           <div className="relative size-full h-[120px] overflow-hidden md:h-[220px]">
             <Image
@@ -41,7 +41,7 @@ type CategoriesProps = { catData: CategorieType[] };
 
 const CategoriesList = ({ catData }: CategoriesProps) => {
   return (
-    <ul className="mt-3 grid gap-2 min-[512px]:grid-cols-12 md:mt-5 md:gap-3 lg:gap-4">
+    <ul className="mt-3 grid gap-2 min-[512px]:grid-cols-12 md:mt-7 md:gap-3 lg:gap-4">
       {catData?.map(({ id, link, name, image }, i) => (
         <CategoriesItem key={id} link={link} name={name} image={image} i={i} />
       ))}

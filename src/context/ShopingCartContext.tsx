@@ -32,6 +32,7 @@ export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
     "shopping-cart",
     [],
   );
+  console.log("cartItems", cartItems);
 
   const cartQuantity =
     cartItems?.reduce((acc, curr) => acc + curr.quantity, 0) || 0;

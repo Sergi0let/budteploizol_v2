@@ -21,17 +21,17 @@ export const ContactMenu = ({ className }: { className?: string }) => {
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuLabel>Контакти</DropdownMenuLabel>
+          <DropdownMenuLabel className="px-4 py-1">Контакти</DropdownMenuLabel>
           <DropdownMenuSeparator />
           {contactsData.map((contact: ContactEntityType) => (
             <DropdownMenuItem key={contact.id}>
               <a
-                className="capitalize"
+                className="px-4 py-1 capitalize text-zinc-700"
                 href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
               >
                 <ContactsIcons
                   contactType={contact.typeContact}
-                  className="float-left mr-2 size-6"
+                  className="float-left mr-3 size-6"
                 />
                 {contact.typeContact === ContactType.Kyivstar ||
                 contact.typeContact === ContactType.Vodafone ||

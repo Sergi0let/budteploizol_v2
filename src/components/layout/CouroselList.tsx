@@ -20,19 +20,18 @@ export const CouroselList = ({ listItems, className }: CouroselListProps) => {
   if (!listItems) return null;
 
   return (
-    <div className={`py-4 ${className || ""}`}>
+    <div className={`${className || ""}`}>
       <Splide
         options={{
           rewind: true,
           perPage: isDesktop ? 4 : isTablet ? 3.2 : isMobile ? 2.2 : 1.2,
           type: "loop",
-
-          gap: "1rem",
+          // gap: "1rem",
         }}
         hasTrack={false}
         aria-label="carousel products"
       >
-        <div className="custom-wrapper">
+        <div className="custom-wrapper px-2">
           <SplideTrack>
             {listItems.map((item, index) => (
               <SplideSlide key={index}>
@@ -42,10 +41,11 @@ export const CouroselList = ({ listItems, className }: CouroselListProps) => {
           </SplideTrack>
 
           <div className="splide__arrows">
-            <button className="splide__arrow splide__arrow--prev icon-wrapper">
-              <ChevronLeft />
+            <button className="splide__arrow splide__arrow--prev">
+              <ChevronLeft className="" />
             </button>
-            <button className="splide__arrow splide__arrow--next icon-wrapper">
+            <ul className="splide__pagination"></ul>
+            <button className="splide__arrow splide__arrow--next">
               <ChevronRight />
             </button>
           </div>

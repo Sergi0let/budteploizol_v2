@@ -30,24 +30,45 @@ body {
     text-overflow: ellipsis; /* Додає три крапки (...) після обрізання */
   }
   .icon-wrapper {
-    @apply flex size-8 items-center justify-center rounded-lg border text-zinc-900 transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+    @apply flex size-8 items-center justify-center rounded-lg border transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+  }
+  /* Carousels */
+  .custom-wrapper .splide__track {
+    @apply rounded-lg border;
+  }
+  .custom-wrapper .splide__arrows {
+    @apply flex w-full items-center justify-center gap-2;
+  }
+  .custom-wrapper .splide__arrows .splide__pagination {
+    position: static !important;
+  }
+  .custom-wrapper .splide__track {
+    @apply my-2;
+  }
+  .custom-wrapper .splide__slide > div {
+    border-right: 1px solid #e2e8f0;
+  }
+  .splide__arrow.splide__arrow--prev,
+  .splide__arrow.splide__arrow--next {
+    position: static;
+    background: none;
+    cursor: pointer;
+    transform: translateY(0);
   }
   .custom-wrapper .splide__arrow {
-    @apply flex size-8 items-center justify-center rounded-lg border text-zinc-900 transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+    @apply flex size-8 items-center justify-center rounded-full border transition-colors hover:bg-sky-50 hover:text-blue-600 focus:outline-none sm:size-10;
   }
   .custom-wrapper .splide__arrow svg {
-    @apply !rotate-0;
+    @apply !rotate-0 fill-none text-blue-600;
   }
-  .custom-wrapper .splide__pagination {
-    @apply translate-y-8;
-  }
+
   .custom-wrapper .splide__pagination li .splide__pagination__page {
     @apply bg-blue-200;
   }
   .custom-wrapper .splide__pagination li .splide__pagination__page.is-active {
     @apply bg-blue-600;
   }
-
+  /* --------- */
   /* Main block */
   .main-image div {
     background: url("/main/bg.png");
@@ -80,6 +101,38 @@ body {
       rgba(255, 255, 255, 0) 100%
     );
   }
+
+  /* Listing product items */
+  .list-items {
+    --gap: 2px;
+    --line-thickness: 1px;
+    --line-offset: calc(var(--gap) / 2);
+    --line-color: #e2e8f0;
+    align-items: stretch;
+    @apply grid grid-cols-2 flex-wrap gap-[var(--gap)] overflow-hidden rounded-b-lg border md:grid-cols-3 xl:grid-cols-4;
+  }
+  .list-item {
+    @apply relative p-px;
+  }
+  .list-item:before,
+  .list-item:after {
+    content: "";
+    position: absolute;
+    background: var(--line-color);
+  }
+  .list-item:after {
+    inline-size: var(--line-thickness);
+    block-size: 100vh;
+    inset-block-start: 0;
+    inset-inline-start: calc(var(--line-offset) * -1);
+  }
+  .list-item:before {
+    inline-size: 100vw;
+    block-size: var(--line-thickness);
+    inset-block-start: calc(var(--line-offset) * -1);
+    inset-inline-start: 0;
+  }
+  /* --------------------- */
 }
 
 @layer base {

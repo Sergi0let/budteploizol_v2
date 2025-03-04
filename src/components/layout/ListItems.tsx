@@ -3,10 +3,15 @@ import { ProductType } from "@/types";
 
 export const ListItems = ({ items }: { items: ProductType[] }) => {
   return (
-    <div className="grid grid-cols-2 flex-wrap gap-2 md:grid-cols-3 md:gap-4 lg:gap-6 xl:grid-cols-4">
-      {items.map((items) => (
-        <Card key={items.id} {...items} />
-      ))}
+    <div>
+      <div className="flex h-12 items-center rounded-t-lg border-l border-r border-t px-5"></div>
+      <ul className="list-items">
+        {items.map((items) => (
+          <li className="list-item" key={items.id}>
+            <Card {...items} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
