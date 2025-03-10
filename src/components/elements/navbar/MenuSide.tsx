@@ -6,7 +6,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { categoryLinks, contactPrefix, contactsData, pageLinks } from "@/data";
+import { contactPrefix, contactsData, pageLinks } from "@/data";
+import { categoryListData } from "@/data/category";
 import { ContactEntityType } from "@/types";
 import { Menu } from "lucide-react";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export const MenuSide = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="sticky top-0">
-          <figure className="p-2 pb-1 lg:p-5 lg:pb-4">
+          <figure className="flex h-14 w-full items-center px-2 pt-2">
             <Image
               src="/logo/logo-main.png"
               width={120}
@@ -36,11 +37,11 @@ export const MenuSide = () => {
             Категорії товарів
           </SheetTitle>
           <ul className="block lg:hidden">
-            {categoryLinks.map((link) => (
+            {categoryListData.map((link) => (
               <li key={link.id}>
                 <Link
                   className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
-                  href={link.url}
+                  href={`/catalog/${link.link}`}
                 >
                   {link.name}
                 </Link>

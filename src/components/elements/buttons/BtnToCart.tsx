@@ -8,9 +8,9 @@ type CartItem = {
   quantity: number;
 };
 
-export const BtnToCart = ({ id }: { id: number }) => {
+const BtnToCart = ({ id }: { id: number }) => {
   const [cart, setCart] = useLocalStorage<CartItem[]>("cart", []);
-  console.log(cart);
+  console.log("BtnToCart: ", cart);
 
   const handleAddToCart = () => {
     setCart((prevCart) => {
@@ -33,6 +33,9 @@ export const BtnToCart = ({ id }: { id: number }) => {
       className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-blue-600 md:size-14"
     >
       <ShoppingCart className="size:4 text-white md:size-8" />
+      <span className="sr-only">додоти до кошика</span>
     </button>
   );
 };
+
+export { BtnToCart };

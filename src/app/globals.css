@@ -14,6 +14,10 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
+ul {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
 /* * {
   border: 1px solid red;
 } */
@@ -30,7 +34,7 @@ body {
     text-overflow: ellipsis; /* Додає три крапки (...) після обрізання */
   }
   .icon-wrapper {
-    @apply flex size-8 items-center justify-center rounded-lg border transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-10;
+    @apply flex size-10 items-center justify-center rounded-lg border transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-12;
   }
   /* Carousels */
   .custom-wrapper .splide__track {
@@ -133,6 +137,173 @@ body {
     inset-inline-start: 0;
   }
   /* --------------------- */
+
+  /* Загальний стиль скролбару */
+  .cart-block::-webkit-scrollbar {
+    width: 6px; /* Ширина вертикального скролбару */
+    height: 6px; /* Висота горизонтального скролбару */
+  }
+  .cart-block::-webkit-scrollbar-track {
+    background: oklch(0.977 0.013 236.62);
+    border-radius: 12px;
+  }
+  .cart-block::-webkit-scrollbar-thumb {
+    background: oklch(0.705 0.015 286.067);
+    border-radius: 12px;
+  }
+  .cart-block::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.609 0.126 221.723);
+    transition: all 0.5s;
+  }
+
+  .cart-block::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /*  ----- input ------ */
+  :root {
+    --color-valid: oklch(0.627 0.194 149.214);
+    --color-invalid: oklch(0.637 0.237 25.331);
+  }
+
+  /* ----- input ------ */
+  :root {
+    --color-valid: oklch(0.627 0.194 149.214);
+    --color-invalid: oklch(0.637 0.237 25.331);
+  }
+
+  .input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .input-group label {
+      font-size: 1rem;
+    }
+  }
+
+  .input-group select,
+  .input-group input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    font-size: 1.125rem;
+    outline: none;
+  }
+
+  .input-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("/chevron-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+  }
+
+  .input-group select::-ms-expand {
+    display: none; /* Ховаємо стрілку в IE/Edge */
+  }
+
+  .input-group select:user-valid,
+  .input-group select:user-invalid {
+    background-image: none;
+  }
+
+  .input-group select:user-invalid,
+  .input-group input:user-invalid {
+    border-color: var(--color-invalid);
+  }
+
+  .input-group select:user-valid,
+  .input-group input:user-valid {
+    border-color: var(--color-valid);
+  }
+
+  .input-group select:user-invalid + span::before,
+  .input-group input:user-invalid + span::before,
+  .input-group select:user-valid + span::before,
+  .input-group input:user-valid + span::before {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-40%);
+  }
+
+  .input-group select:user-invalid + span::before,
+  .input-group input:user-invalid + span::before {
+    content: "❌";
+    color: var(--color-invalid);
+  }
+
+  .input-group select:user-valid + span::before,
+  .input-group input:user-valid + span::before {
+    content: "✅";
+    color: var(--color-valid);
+  }
+
+  .input-group select:user-invalid ~ .input-group__error,
+  .input-group input:user-invalid ~ .input-group__error {
+    color: var(--color-invalid);
+    opacity: 1;
+  }
+
+  .input-group input[type="radio"] {
+    appearance: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1rem;
+    height: 1rem;
+    background-color: lightblue;
+    border: 1px solid blue;
+    border-radius: 50%;
+  }
+
+  .input-group input[type="radio"]::after {
+    content: "#";
+  }
+
+  .input-group .input-group__error {
+    font-size: 0.875rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  /* ------------------ */
+  /* --- accardion --- */
+  .accardion-details {
+    /* @apply grid; */
+  }
+  .accordion-summary {
+    @apply relative cursor-pointer list-none;
+  }
+  .accordion-summary::marker,
+  .accordion-summary::-webkit-details-marker {
+    @apply hidden;
+  }
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    @apply grid transition-all duration-300 ease-in-out;
+  }
+  .accordion-content-body {
+    overflow: hidden;
+    @apply px-[2px] py-px;
+  }
+  .accordion-details[open] + .accordion-content {
+    grid-template-rows: 1fr;
+  }
+
+  /* ------------------ */
 }
 
 @layer base {

@@ -7,7 +7,7 @@ import { CircleCheck, CircleX, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-type CardProps = ProductType;
+type CardProps = ProductType & { className?: string };
 
 export const Card = ({
   id,
@@ -22,6 +22,7 @@ export const Card = ({
   category,
   // unit,
   // layers,
+  className,
 }: CardProps) => {
   const {
     // getItemQuantity,
@@ -48,7 +49,9 @@ export const Card = ({
   );
 
   return (
-    <div className="relative flex h-full w-full flex-col justify-between overflow-hidden bg-white p-2 shadow-sm transition-all sm:p-5">
+    <div
+      className={`relative flex h-full w-full flex-col justify-between overflow-hidden bg-white p-2 shadow-sm transition-all sm:p-5 ${className}`}
+    >
       {isDiscounted && discount?.percentage !== 0 && (
         <span className="absolute right-1 top-1 z-10 rounded-lg rounded-ee-none rounded-ss-none bg-red-500 px-3 py-1 text-sm font-medium text-white">
           -{discount?.percentage}%

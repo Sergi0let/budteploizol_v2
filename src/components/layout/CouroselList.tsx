@@ -14,19 +14,26 @@ type CouroselListProps = {
 
 export const CouroselList = ({ listItems, className }: CouroselListProps) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 994px)" });
-  const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
-  const isMobile = useMediaQuery({ query: "(min-width: 480px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 993px)",
+  });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
-  if (!listItems) return null;
+  if (!listItems || listItems.length === 0) return null;
 
   return (
     <div className={`${className || ""}`}>
       <Splide
         options={{
           rewind: true,
-          perPage: isDesktop ? 4 : isTablet ? 3.2 : isMobile ? 2.2 : 1.2,
-          type: "loop",
-          // gap: "1rem",
+          perPage: isDesktop ? 4 : isTablet ? 3 : isMobile ? 1 : 1,
+          type: isMobile ? "fade" : "slide",
+          gap: "1rem",
+          autoplay: true,
+          interval: 3000,
+          speed: 500,
+          arrows: true,
+          pagination: true,
         }}
         hasTrack={false}
         aria-label="carousel products"
@@ -35,14 +42,14 @@ export const CouroselList = ({ listItems, className }: CouroselListProps) => {
           <SplideTrack>
             {listItems.map((item, index) => (
               <SplideSlide key={index}>
-                <Card {...item} />
+                <Card {...item} className="p-4" />
               </SplideSlide>
             ))}
           </SplideTrack>
 
           <div className="splide__arrows">
             <button className="splide__arrow splide__arrow--prev">
-              <ChevronLeft className="" />
+              <ChevronLeft />
             </button>
             <ul className="splide__pagination"></ul>
             <button className="splide__arrow splide__arrow--next">

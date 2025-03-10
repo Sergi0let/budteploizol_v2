@@ -31,7 +31,6 @@ export enum ContactType {
 export type ContactEntityType = {
   id: number;
   phone: string;
-
   typeContact: ContactType;
 };
 
@@ -72,7 +71,6 @@ export const CategoryDisplayNames: { [key in Category]: string } = {
   [Category.Soundproofing]: "Звукоізоляційні матеріали",
   [Category.Mats]: "Спортивні мати",
   [Category.Rolls]: "Рулони",
-
   [Category.Kulumki]: "Килимки",
   [Category.Sidyshki]: "Сидушки",
 };
@@ -113,4 +111,9 @@ export type ProductType = {
 
 export type SvgProps = {
   className: string;
+};
+
+export type CartItemType = {
+  id: string | number;
+  quantity: number;
 };

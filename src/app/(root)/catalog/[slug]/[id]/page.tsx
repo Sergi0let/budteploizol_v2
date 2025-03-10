@@ -1,5 +1,6 @@
 import {
   BreadcrumbNavigation,
+  BtnOpenCart,
   CharacteristicsInfo,
   DeliveryInfo,
   ProductCartActions,
@@ -9,14 +10,7 @@ import {
 import { deliveryData, products } from "@/data";
 import { formatPrice } from "@/lib/utils";
 import { CategoryDisplayNames, ProductType } from "@/types";
-import {
-  BriefcaseBusiness,
-  CircleCheck,
-  CircleX,
-  ShoppingCart,
-  Wallet,
-} from "lucide-react";
-import Link from "next/link";
+import { BriefcaseBusiness, CircleCheck, CircleX, Wallet } from "lucide-react";
 
 const ProductPage = async ({
   params,
@@ -119,13 +113,9 @@ const ProductPage = async ({
                     id={id}
                   />
                 </div>
-                <Link
-                  href="/cart"
-                  className="col-span-full mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0"
-                >
-                  <ShoppingCart className="mr-1" />
-                  <span>В кошик</span>
-                </Link>
+                <div className="col-span-full mt-6 w-full md:col-auto md:mt-0">
+                  <BtnOpenCart />
+                </div>
               </div>
             </div>
 

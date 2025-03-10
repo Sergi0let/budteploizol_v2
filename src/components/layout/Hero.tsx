@@ -8,7 +8,7 @@ const heroTxt: string[] = [
 
 const Hero = () => {
   return (
-    <div className="mb-7 bg-sky-50 px-4 pb-5 pt-6 md:pt-10">
+    <div className="mb-7 bg-sky-50 px-4 py-6 md:py-10">
       <div className="container mx-auto max-w-7xl">
         <h1 className="text-3xl font-medium text-zinc-800 md:text-4xl xl:text-5xl">
           Буд<span className="font-semibold text-blue-600">Тепло</span>Ізол –

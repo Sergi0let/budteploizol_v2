@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocalStorage } from "@/hooks";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 type ShopingCartProviderProps = {
   children: React.ReactNode;
@@ -10,6 +10,8 @@ type ShopingCartProviderProps = {
 type ShopingCartContextType = {
   cartItems: CartItem[];
   cartQuantity: number;
+  openCart: boolean;
+  setOpenCart: (isOpen: boolean) => void;
   getItemQuantity: (id: number | string) => number;
   increaseItemQuantity: (id: number | string | string) => void;
   decreaseItemQuantity: (id: number | string | string) => void;
@@ -32,7 +34,7 @@ export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
     "shopping-cart",
     [],
   );
-  console.log("cartItems", cartItems);
+  const [openCart, setOpenCart] = useState(false);
 
   const cartQuantity =
     cartItems?.reduce((acc, curr) => acc + curr.quantity, 0) || 0;
@@ -87,6 +89,8 @@ export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
       value={{
         cartItems,
         cartQuantity,
+        openCart,
+        setOpenCart,
         getItemQuantity,
         increaseItemQuantity,
         decreaseItemQuantity,

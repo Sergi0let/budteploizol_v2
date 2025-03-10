@@ -13,14 +13,13 @@ export default function Home() {
 
   return (
     <main className="flex-1">
-      {/* <Main /> */}
       <Hero />
       <Categories catData={categoryListData} />
       <Features />
       <PreviewList
         listItems={kulimki}
         showAllLink={Category.Sidyshki}
-        title="Кулички для сидіння"
+        title="Мати для спорту, туризму та ігор"
       />
       <PreviewList
         listItems={sudinia}

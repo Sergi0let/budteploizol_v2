@@ -1,4 +1,4 @@
-export const EmptyBag = ({ className }: { className?: string }) => {
+const EmptyBag = ({ className }: { className?: string }) => {
   return (
     <svg
       className={`m-auto h-12 w-12 md:h-20 md:w-20 ${className}`}
@@ -31,3 +31,5 @@ export const EmptyBag = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
+export { EmptyBag };
