@@ -7,17 +7,11 @@ export type DeliveryInfoType = {
   cost: string;
 };
 
-export type CategorieType = {
-  id: string;
-  name: string;
-  image: string;
-  link: string;
-};
-
 export type CategoryLinksType = {
-  id: number;
+  id?: number | string;
   name: string;
   url: string;
+  image?: string;
 };
 
 export enum ContactType {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useShopingCart } from "@/context/ShopingCartContext";
+import { useShopingCart } from "@/hooks";
 import { ShoppingCart } from "lucide-react";
 
 const BtnOpenCart = () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useShopingCart } from "@/context/ShopingCartContext";
+import { useShopingCart } from "@/hooks";
 import { Minus, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 

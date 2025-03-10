@@ -24,7 +24,7 @@ export const Footer = () => {
                 <Dot className="mr-2 text-blue-600 group-hover:text-green-600" />
                 <Link
                   className="w-full py-4 text-lg text-zinc-500 group-hover:text-blue-600"
-                  href={item.link}
+                  href={item.url}
                 >
                   {item.name}
                 </Link>

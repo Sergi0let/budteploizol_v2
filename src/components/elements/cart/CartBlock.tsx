@@ -1,9 +1,12 @@
 "use client";
 
-import { useShopingCart } from "@/context/ShopingCartContext";
+import { BasketIcons } from "@/components/icons";
 import { products } from "@/data";
-import { useWindowScreenSize } from "@/hooks";
-import useGetItemsFromCart from "@/hooks/useGetItemsFromCart";
+import {
+  useGetItemsFromCart,
+  useShopingCart,
+  useWindowScreenSize,
+} from "@/hooks";
 import { formatPrice } from "@/lib/utils";
 import { Gift, Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
@@ -36,7 +39,11 @@ const CartBlock = () => {
   const { width } = useWindowScreenSize();
 
   if (cartProducts.length === 0) {
-    return <div>Кошик пустий</div>;
+    return (
+      <div className="max-w-4xl p-10">
+        <BasketIcons className="mx-auto max-w-[360px]" />
+      </div>
+    );
   }
 
   const descktopCart = (

@@ -1,3 +1,4 @@
+export * from "./BasketIcons";
 export * from "./ContactsIcons";
 export * from "./EmptyBag";
 export * from "./KyivstarIcon";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocalStorage } from "@/hooks";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 type ShopingCartProviderProps = {
   children: React.ReactNode;
@@ -24,10 +24,6 @@ type CartItem = {
 };
 
 export const ShopingCartContext = createContext({} as ShopingCartContextType);
-
-export function useShopingCart() {
-  return useContext(ShopingCartContext);
-}
 
 export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(

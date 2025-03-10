@@ -65,11 +65,6 @@ export const contactPrefix: { [key in ContactType]: string } = {
   [ContactType.Telegram]: "https://t.me/",
   [ContactType.Viber]: "viber://chat?number=",
 };
-export const categoryLinks: CategoryLinksType[] = [
-  { id: 1, name: "Звукоізоляція", url: `/${Category.Soundproofing}` },
-  { id: 2, name: "Спортивні мати", url: `/${Category.Mats}` },
-  { id: 3, name: "Рулони", url: `/${Category.Rolls}` },
-];
 
 export const products: ProductType[] = [
   {
@@ -717,17 +712,17 @@ export const deliveryData: DeliveryInfoType[] = [
     time: "1-5 днів",
     cost: "За тарифами перевізника",
   },
-  {
-    id: "2",
-    imgUrl: "/logo/ukrposhta.webp",
-    name: "Укрпошта",
-    type: "До відділення",
-    time: "1-5 днів",
-    cost: "За тарифами перевізника",
-  },
+  // {
+  //   id: "2",
+  //   imgUrl: "/logo/ukrposhta.webp",
+  //   name: "Укрпошта",
+  //   type: "До відділення",
+  //   time: "1-5 днів",
+  //   cost: "За тарифами перевізника",
+  // },
   {
     id: "3",
-    imgUrl: "/logo/nova-poshta.webp",
+    imgUrl: "/icons/lorry.svg",
     name: "Самовивіз",
     type: "До пункту",
     time: "1-2 днів",

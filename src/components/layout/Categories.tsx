@@ -1,22 +1,22 @@
 import { SectionHeading } from "@/components";
-import { CategorieType } from "@/types";
+import { CategoryLinksType } from "@/types";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-type CategorieItemType = Omit<CategorieType, "id"> & { i: number };
+type CategorieItemType = CategoryLinksType & { i: number };
 
-const CategoriesItem = ({ link, name, image, i }: CategorieItemType) => {
+const CategoriesItem = ({ url, name, image, i }: CategorieItemType) => {
   return (
     <li
       className={`group overflow-hidden rounded-lg border ${i === 0 || i === 1 ? "min-[512px]:col-span-6" : "min-[512px]:col-span-6 md:col-span-4"}`}
     >
-      <Link href={`/catalog/${link}`}>
+      <Link href={`/catalog/${url}`}>
         <figure>
           <div className="relative size-full h-[120px] overflow-hidden md:h-[220px]">
             <Image
               className="absolute inset-0 size-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
-              src={image}
+              src={image!}
               alt={name}
               width={630}
               height={220}
@@ -37,26 +37,33 @@ const CategoriesItem = ({ link, name, image, i }: CategorieItemType) => {
   );
 };
 
-type CategoriesProps = { catData: CategorieType[] };
+type CategoriesProps = { catData: CategoryLinksType[]; isPage?: boolean };
 
 const CategoriesList = ({ catData }: CategoriesProps) => {
   return (
     <ul className="mt-3 grid gap-2 min-[512px]:grid-cols-12 md:mt-7 md:gap-3 lg:gap-4">
-      {catData?.map(({ id, link, name, image }, i) => (
-        <CategoriesItem key={id} link={link} name={name} image={image} i={i} />
+      {catData?.map(({ id, url, name, image }, i) => (
+        <CategoriesItem key={id} url={url} name={name} image={image} i={i} />
       ))}
     </ul>
   );
 };
 
-const Categories = ({ catData }: CategoriesProps) => {
+const Categories = ({ catData, isPage = false }: CategoriesProps) => {
   return (
     <section className="mb-7 px-4 md:mb-10">
       <div className="container mx-auto max-w-7xl py-7 md:py-9">
-        <SectionHeading
-          title="Категорії товарів"
-          className="text-2xl md:text-3xl xl:text-4xl"
-        />
+        {isPage ? (
+          <h1 className="text-3xl font-medium text-zinc-800 md:text-4xl xl:text-5xl">
+            Категорії товарів
+          </h1>
+        ) : (
+          <SectionHeading
+            title="Категорії товарів"
+            className="text-2xl md:text-3xl xl:text-4xl"
+          />
+        )}
+
         <CategoriesList catData={catData} />
       </div>
     </section>

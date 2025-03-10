@@ -41,7 +41,7 @@ export const MenuSide = () => {
               <li key={link.id}>
                 <Link
                   className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
-                  href={`/catalog/${link.link}`}
+                  href={`/catalog/${link.url}`}
                 >
                   {link.name}
                 </Link>

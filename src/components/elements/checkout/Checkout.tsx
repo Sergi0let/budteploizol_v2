@@ -1,8 +1,7 @@
 "use client";
 
-import { useShopingCart } from "@/context/ShopingCartContext";
 import { products } from "@/data";
-import useGetItemsFromCart from "@/hooks/useGetItemsFromCart";
+import { useGetItemsFromCart, useShopingCart } from "@/hooks";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import { CheckoutForm } from "./CheckoutForm";

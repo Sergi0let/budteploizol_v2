@@ -11,7 +11,7 @@ const CatalogPage = () => {
           />
         </div>
       </div>
-      <Categories catData={categoryListData} />
+      <Categories catData={categoryListData} isPage={true} />
     </main>
   );
 };

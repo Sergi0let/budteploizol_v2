@@ -1,7 +1,7 @@
 "use client";
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { useShopingCart } from "@/context/ShopingCartContext";
+import { useShopingCart } from "@/hooks";
 import { ShoppingCart, X } from "lucide-react";
 import { CartBlock } from "../cart";
 

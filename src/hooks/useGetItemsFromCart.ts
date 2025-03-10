@@ -38,4 +38,4 @@ const useGetItemsFromCart = (
   };
 };
 
-export default useGetItemsFromCart;
+export { useGetItemsFromCart };

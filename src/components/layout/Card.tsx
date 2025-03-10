@@ -1,6 +1,6 @@
 "use client";
 
-import { useShopingCart } from "@/context/ShopingCartContext";
+import { useShopingCart } from "@/hooks";
 import { calculateDiscountedPrice, formatPrice } from "@/lib/utils";
 import { ProductType } from "@/types";
 import { CircleCheck, CircleX, ShoppingCart } from "lucide-react";
