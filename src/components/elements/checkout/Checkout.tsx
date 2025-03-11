@@ -4,12 +4,74 @@ import { products } from "@/data";
 import { useGetItemsFromCart, useShopingCart } from "@/hooks";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { CheckoutForm } from "./CheckoutForm";
 
 const Checkout = () => {
   const { cartItems } = useShopingCart();
   const { cartProducts = [], cartTotalPrice = 0 } =
     useGetItemsFromCart(cartItems, products) || {};
+
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
+
+  const updateFormValidity = () => {
+    if (formRef.current) {
+      setIsFormValid(formRef.current.checkValidity());
+    }
+  };
+
+  // Викликаємо перевірку валідності при зміні полів
+  useEffect(() => {
+    updateFormValidity();
+  }, [cartItems]); // Можеш додати залежності, якщо потрібно
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      const formData = new FormData(formRef.current);
+
+      // Явно приводимо значення до `string`
+      const data = Object.fromEntries(
+        Array.from(formData.entries()).map(([key, value]) => [
+          key,
+          value instanceof File ? "" : value,
+        ]),
+      ) as Record<string, string>;
+
+      const isContactInfoValid =
+        data.lastname && data.name && data.phone && data.mail;
+      const isDeliveryInfoValid = data.deliveryType && data.deliveryAddress;
+
+      if (!isContactInfoValid || !isDeliveryInfoValid) {
+        alert("Please fill in all required fields!");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          router.replace("/order-success");
+        } else {
+          router.replace("/order-fail");
+        }
+      } catch (error) {
+        console.warn("Error: ", error);
+        router.replace("/order-fail");
+      } finally {
+        setIsSubmitting(true);
+      }
+    }
+  };
 
   return (
     <div className="container mx-auto flex max-w-7xl flex-1 flex-col gap-4 px-4 pb-4 md:flex-row">
@@ -52,7 +114,11 @@ const Checkout = () => {
               </li>
             ))}
         </ul>
-        <CheckoutForm />
+        <CheckoutForm
+          ref={formRef}
+          onInputChange={updateFormValidity}
+          isSubmitting={isSubmitting}
+        />
       </div>
       <div className="w-full max-w-[360px]">
         <div className="mt-4 rounded-lg bg-white p-4">
@@ -78,8 +144,17 @@ const Checkout = () => {
             </span>
           </div>
           <div className="mt-4 flex items-end justify-between gap-4 border-t border-sky-50 pt-4">
-            <button className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0">
+            {/* <button className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0">
               Замовлення підтверджую
+            </button> */}
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              form="checkout-form"
+              disabled={!isFormValid}
+              className="mt-4 h-14 w-full rounded-lg bg-blue-600 uppercase text-white hover:bg-sky-800 disabled:bg-sky-700"
+            >
+              ЗАМОВЛЕННЯ ПІДТВЕДЖУЮ
             </button>
           </div>
           <div className="mt-4 text-sm text-zinc-500">

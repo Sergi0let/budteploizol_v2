@@ -3,19 +3,37 @@
 import { deliveryData } from "@/data";
 import { useNovaPoshta } from "@/hooks";
 import { Pencil } from "lucide-react";
-import { useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
-const CheckoutForm = () => {
-  const [formData, setFormData] = useState({
-    lastname: "",
-    name: "",
-    phone: "",
-    mail: "",
-    deliveryType: "",
-    deliveryAddress: "",
-    deliveryCity: "",
-    paymentType: "",
-  });
+export type FormDataType = {
+  lastname: string;
+  name: string;
+  phone: string;
+  mail: string;
+  deliveryType: string;
+  deliveryAddress: string;
+  deliveryCity?: string;
+  paymentType: string;
+  comment: string;
+};
+
+export const initialFormData: FormDataType = {
+  lastname: "",
+  name: "",
+  phone: "",
+  mail: "",
+  deliveryType: "",
+  deliveryAddress: "",
+  deliveryCity: "",
+  paymentType: "payAfterGetting",
+  comment: "",
+};
+
+const CheckoutForm = forwardRef<
+  HTMLFormElement,
+  { onInputChange: () => void; isSubmitting: boolean }
+>(({ onInputChange, isSubmitting }, ref) => {
+  const [formData, setFormData] = useState<FormDataType>(initialFormData);
   console.log(formData);
 
   const {
@@ -41,7 +59,9 @@ const CheckoutForm = () => {
 
   // Функція для обробки змін у полях форми
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
   ) => {
     const { name, value } = e.target;
 
@@ -53,11 +73,17 @@ const CheckoutForm = () => {
     updateFormData(name, value);
   };
 
+  useEffect(() => {
+    if (isSubmitting === true) setFormData(initialFormData);
+  }, [isSubmitting]);
+
   const isContactInfoValid =
     formData.lastname && formData.name && formData.phone && formData.mail;
 
   const isDeliveryInfoValid =
     formData.deliveryType && formData.deliveryAddress && formData.deliveryCity;
+
+  const isPaymentInfoValid = formData.paymentType;
 
   const handleOpenSpoller = (
     currentId: string,
@@ -79,7 +105,12 @@ const CheckoutForm = () => {
     }
   };
   return (
-    <form className="relative mt-4 rounded-lg bg-white p-4">
+    <form
+      ref={ref}
+      id="checkout-form"
+      className="relative mt-4 rounded-lg bg-white p-4"
+      onInput={onInputChange}
+    >
       <details className="accordion-details" name="contact-info">
         <summary
           role="term"
@@ -363,7 +394,7 @@ const CheckoutForm = () => {
             <p className="cursor-default text-xl uppercase text-zinc-800 md:text-2xl">
               3. Спосіб оплати
             </p>
-            {isContactInfoValid && (
+            {isPaymentInfoValid && (
               <div className="flex cursor-pointer items-center gap-0.5 text-xs text-blue-600">
                 <Pencil className="size-4" />
                 <span>Редагувати</span>
@@ -379,8 +410,9 @@ const CheckoutForm = () => {
       </details>
       <div role="definition" id="payment-info" className="accordion-content">
         <div className="accordion-content-body">
-          <div className="input-group">
+          <div>
             <input
+              className="mr-2"
               type="radio"
               id="payOne"
               name="paymentType"
@@ -388,11 +420,14 @@ const CheckoutForm = () => {
               checked={formData.paymentType === "payAfterGetting"}
               onChange={handleChange}
             />
-            <label htmlFor="payOne">Оплата при отриманні товару</label>
+            <label htmlFor="payOne" className="text-lg text-zinc-800">
+              Оплата при отриманні товару
+            </label>
           </div>
 
-          <div className="input-group">
+          <div>
             <input
+              className="mr-2"
               type="radio"
               id="payTwo"
               name="paymentType"
@@ -400,24 +435,30 @@ const CheckoutForm = () => {
               checked={formData.paymentType === "payNoCash"}
               onChange={handleChange}
             />
-            <label htmlFor="payTwo">Безготівковий розрахунок</label>
+            <label htmlFor="payTwo" className="text-lg text-zinc-800">
+              Безготівковий розрахунок
+            </label>
           </div>
-
-          <button
-            onClick={(e) =>
-              handleOpenSpoller("contact-info", "delivery-info", e)
-            }
-            className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:mt-4"
-          >
-            <span>ПРОДОВЖИТИ ОФОРМЛЕННЯ</span>
-          </button>
         </div>
       </div>
-      <button className="mt-4 h-14 w-full rounded-lg bg-blue-600 uppercase text-white hover:bg-sky-800">
-        Submit
-      </button>
+
+      <div className="input-group mb-2 mt-4">
+        <label htmlFor="comment-field">Коментарь до замовлення</label>
+        <textarea
+          name="comment"
+          id="comment-field"
+          value={formData.comment}
+          onChange={handleChange}
+          className="w-full border p-2"
+          required
+        />
+        <span className="input-group__error">
+          Коментарь обобов&apos;язковий
+        </span>
+      </div>
     </form>
   );
-};
+});
 
+CheckoutForm.displayName = "CheckoutForm";
 export { CheckoutForm };

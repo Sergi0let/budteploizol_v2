@@ -18,6 +18,7 @@ ul {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
+
 /* * {
   border: 1px solid red;
 } */
@@ -190,6 +191,7 @@ ul {
     }
   }
 
+  .input-group textarea,
   .input-group select,
   .input-group input {
     width: 100%;
@@ -219,18 +221,21 @@ ul {
     background-image: none;
   }
 
+  .input-group textarea:user-invalid,
   .input-group select:user-invalid,
   .input-group input:user-invalid {
     border-color: var(--color-invalid);
   }
 
-  .input-group select:user-valid,
+  .input-group textarea:user-valid .input-group select:user-valid,
   .input-group input:user-valid {
     border-color: var(--color-valid);
   }
 
+  .input-group textarea:user-invalid + span::before,
   .input-group select:user-invalid + span::before,
   .input-group input:user-invalid + span::before,
+  .input-group textarea:user-valid + span::before,
   .input-group select:user-valid + span::before,
   .input-group input:user-valid + span::before {
     position: absolute;
@@ -239,25 +244,28 @@ ul {
     transform: translateY(-40%);
   }
 
+  .input-group textarea:user-invalid + span::before,
   .input-group select:user-invalid + span::before,
   .input-group input:user-invalid + span::before {
     content: "❌";
     color: var(--color-invalid);
   }
 
+  .input-group textarea:user-valid + span::before,
   .input-group select:user-valid + span::before,
   .input-group input:user-valid + span::before {
     content: "✅";
     color: var(--color-valid);
   }
 
+  .input-group textarea:user-invalid ~ .input-group__error,
   .input-group select:user-invalid ~ .input-group__error,
   .input-group input:user-invalid ~ .input-group__error {
     color: var(--color-invalid);
     opacity: 1;
   }
 
-  .input-group input[type="radio"] {
+  /* .input-group input[type="radio"] {
     appearance: none;
     display: inline-grid;
     place-items: center;
@@ -266,11 +274,11 @@ ul {
     background-color: lightblue;
     border: 1px solid blue;
     border-radius: 50%;
-  }
+  } */
 
-  .input-group input[type="radio"]::after {
+  /* .input-group input[type="radio"]::after {
     content: "#";
-  }
+  } */
 
   .input-group .input-group__error {
     font-size: 0.875rem;
@@ -299,8 +307,12 @@ ul {
     overflow: hidden;
     @apply px-[2px] py-px;
   }
+  .accordion-details + .accordion-content {
+    opacity: 0;
+  }
   .accordion-details[open] + .accordion-content {
     grid-template-rows: 1fr;
+    opacity: 1;
   }
 
   /* ------------------ */
