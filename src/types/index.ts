@@ -81,6 +81,7 @@ export enum ProductCategory {
   MILITARY = "military",
   CHILDREN = "children",
   SPORTS = "sports",
+  BUILDING = "building",
 }
 
 // Оновлений тип продукту: використовуємо лише Category для зберігання маршруту,
