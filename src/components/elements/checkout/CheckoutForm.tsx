@@ -85,6 +85,17 @@ const CheckoutForm = forwardRef<
 
   const isPaymentInfoValid = formData.paymentType;
 
+  useEffect(() => {
+    if (cities.length === 1) {
+      const city = cities[0] as { Ref: string; Description: string };
+      setCity(city.Description);
+      setSelectedCity(city.Ref);
+      updateFormData("deliveryCity", city.Description);
+      setShowDropdown(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cities]);
+
   const handleOpenSpoller = (
     currentId: string,
     nextId: string,
@@ -300,12 +311,13 @@ const CheckoutForm = forwardRef<
                   updateFormData("deliveryCity", e.target.value);
                 }}
                 placeholder="Введіть місто"
-                className="w-full border p-2"
+                className="delivery-city w-full border p-2"
+                required
               />
               <span className="input-group__error">Micто обов&apos;язкове</span>
 
               {showDropdown && cities.length > 0 && (
-                <ul className="relative -top-[68px] z-10 max-h-40 w-full touch-auto overflow-y-scroll rounded-lg border-2 border-green-600 bg-white shadow-sm">
+                <ul className="z-10 max-h-40 w-full touch-auto overflow-y-scroll rounded-lg border-2 border-gray-600 bg-white shadow-sm">
                   {cities.map((city: { [key: string]: string }) => (
                     <li
                       key={city.Ref}
@@ -328,7 +340,7 @@ const CheckoutForm = forwardRef<
           {/* Список міст */}
           {/* Вибір відділення */}
           {selectedCity && formData.deliveryType === "Nova Poshta" && (
-            <div className="input-group mb-1">
+            <div className="input-group warhouse-select mb-1">
               <label>Відділення:</label>
               <input
                 type="text"
@@ -339,7 +351,7 @@ const CheckoutForm = forwardRef<
                   updateFormData("deliveryAddress", e.target.value);
                 }}
                 placeholder="Введіть номер відділення"
-                className="w-full border p-2"
+                className="delivery-address w-full border p-2"
               />
             </div>
           )}
@@ -360,6 +372,7 @@ const CheckoutForm = forwardRef<
               ))}
             </ul>
           )}
+          {/* Самовивіз */}
           {formData.deliveryType === "Самовивіз" && (
             <div className="input-group mb-2">
               <select onChange={handleChange} name="deliveryAddress" id="">
@@ -375,7 +388,9 @@ const CheckoutForm = forwardRef<
             заповнення
           </p>
           <button
-            // onClick={(e) => handleOpenSpoller("delivery-info", "payment-info", e)}
+            onClick={(e) =>
+              handleOpenSpoller("delivery-info", "payment-info", e)
+            }
             className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:mt-4"
           >
             <span>ПРОДОВЖИТИ ОФОРМЛЕННЯ</span>

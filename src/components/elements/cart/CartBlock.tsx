@@ -1,6 +1,5 @@
 "use client";
 
-import { BasketIcons } from "@/components/icons";
 import { products } from "@/data";
 import {
   useGetItemsFromCart,
@@ -8,7 +7,7 @@ import {
   useWindowScreenSize,
 } from "@/hooks";
 import { formatPrice } from "@/lib/utils";
-import { Gift, Minus, Plus, Trash2 } from "lucide-react";
+import { Gift, Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,8 +39,11 @@ const CartBlock = () => {
 
   if (cartProducts.length === 0) {
     return (
-      <div className="max-w-4xl p-10">
-        <BasketIcons className="mx-auto max-w-[360px]" />
+      <div className="flex max-w-4xl items-center justify-center gap-4 p-10">
+        <p className="text-center text-lg font-medium text-zinc-500">
+          Кошик порожній
+        </p>
+        <ShoppingCart className="size-10 text-zinc-500" />
       </div>
     );
   }
