@@ -10,7 +10,7 @@ const useNovaPoshta = () => {
 
   const [warehouses, setWarehouses] = useState([]);
   const [warehouseNumber, setWarehouseNumber] = useState("");
-  const debouncedWarehouseNumber = useDebounce(warehouseNumber, 500);
+  const debouncedWarehouseNumber = useDebounce(warehouseNumber, 300);
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [, setLoading] = useState(false);

@@ -317,11 +317,11 @@ const CheckoutForm = forwardRef<
               <span className="input-group__error">Micто обов&apos;язкове</span>
 
               {showDropdown && cities.length > 0 && (
-                <ul className="z-10 max-h-40 w-full touch-auto overflow-y-scroll rounded-lg border-2 border-gray-600 bg-white shadow-sm">
+                <div className="z-10 max-h-40 w-full touch-auto overflow-y-scroll rounded-lg border-2 border-gray-600 bg-white shadow-sm">
                   {cities.map((city: { [key: string]: string }) => (
-                    <li
+                    <button
                       key={city.Ref}
-                      className="cursor-pointer px-4 py-2.5 hover:bg-gray-100"
+                      className="block cursor-pointer px-4 py-2.5 hover:bg-gray-100"
                       onClick={(e) => {
                         e.preventDefault();
                         setCity(city.Description);
@@ -331,9 +331,9 @@ const CheckoutForm = forwardRef<
                       }}
                     >
                       {city.Description}
-                    </li>
+                    </button>
                   ))}
-                </ul>
+                </div>
               )}
             </div>
           )}

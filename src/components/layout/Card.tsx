@@ -23,6 +23,7 @@ export const Card = ({
   // unit,
   // layers,
   className,
+  groupName,
 }: CardProps) => {
   const {
     // getItemQuantity,
@@ -33,6 +34,9 @@ export const Card = ({
 
   // const quantity = getItemQuantity(id);
   // -----
+  const productHref = groupName
+    ? `/catalog/${category}/${groupName}/${id}`
+    : `/catalog/${category}/${id}`;
 
   const isDiscounted = discount && discount?.percentage > 0;
 
@@ -57,7 +61,7 @@ export const Card = ({
           -{discount?.percentage}%
         </span>
       )}
-      <Link href={`/catalog/${category}/${id}`} className="group">
+      <Link href={productHref} className="group">
         <figure className="relative mb-4 h-[164px] overflow-hidden sm:h-[180px] md:h-[200px] lg:h-[227px]">
           <Image
             src={`/products/${image[0]}`}
