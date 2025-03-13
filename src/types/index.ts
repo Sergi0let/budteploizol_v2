@@ -12,6 +12,7 @@ export type CategoryLinksType = {
   name: string;
   url: string;
   image?: string;
+  subCategory?: string[][] | undefined;
 };
 
 export enum ContactType {

@@ -1,10 +1,4 @@
-import {
-  ContactMenu,
-  Logo,
-  MenuSide,
-  Navigation,
-  SearchInput,
-} from "@/components";
+import { ContactMenu, Logo, MenuSide, Navigation } from "@/components";
 import dynamic from "next/dynamic";
 
 const CartComponent = dynamic(
@@ -14,11 +8,11 @@ const CartComponent = dynamic(
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 mt-0 overflow-hidden bg-white px-4 py-2 text-center shadow-md md:py-4">
+    <header className="sticky top-0 z-50 mt-0 bg-white px-4 py-2 text-center shadow-md md:py-4">
       <div className="container mx-auto flex max-w-7xl items-center justify-between gap-4">
         <Logo className="sm:mr-3.5" />
         <Navigation />
-        <SearchInput />
+        {/* <SearchInput /> */}
 
         <div className="flex items-center gap-2 lg:gap-4">
           <ContactMenu className="hidden md:block" />

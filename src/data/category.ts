@@ -1,4 +1,10 @@
-import { Category, CategoryDisplayNames, CategoryLinksType } from "@/types";
+import {
+  Category,
+  CategoryDisplayNames,
+  CategoryLinksType,
+  SubCategoryRolls,
+  SubCategorySoundproofing,
+} from "@/types";
 
 export const categoryListData: CategoryLinksType[] = [
   {
@@ -18,6 +24,7 @@ export const categoryListData: CategoryLinksType[] = [
     name: CategoryDisplayNames[Category.Rolls],
     image: "/cat/rolls.webp",
     url: `/${Category.Rolls}`,
+    subCategory: Object.entries(SubCategoryRolls),
   },
   {
     id: "4",
@@ -28,7 +35,8 @@ export const categoryListData: CategoryLinksType[] = [
   {
     id: "5",
     name: CategoryDisplayNames[Category.Soundproofing],
-    image: "/cat/soundproofing.webp",
+    image: "/cat/zvyko-izol.webp",
     url: `/${Category.Soundproofing}`,
+    subCategory: Object.entries(SubCategorySoundproofing),
   },
 ];

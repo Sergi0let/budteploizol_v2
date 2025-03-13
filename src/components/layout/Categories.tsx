@@ -16,7 +16,7 @@ const CategoriesItem = ({ url, name, image, i }: CategorieItemType) => {
           <div className="relative size-full h-[120px] overflow-hidden md:h-[220px]">
             <Image
               className="absolute inset-0 size-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
-              src={image!}
+              src={image || ""}
               alt={name}
               width={630}
               height={220}

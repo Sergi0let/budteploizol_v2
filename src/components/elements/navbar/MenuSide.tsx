@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -8,7 +9,15 @@ import {
 } from "@/components/ui/sheet";
 import { contactPrefix, contactsData, pageLinks } from "@/data";
 import { categoryListData } from "@/data/category";
-import { ContactEntityType } from "@/types";
+import {
+  Category,
+  CategoryDisplayNames,
+  ContactEntityType,
+  SubCategoryRolls,
+  SubCategoryRollsDisplayNames,
+  SubCategorySoundproofing,
+  SubCategorySoundproofingDisplayNames,
+} from "@/types";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,16 +46,75 @@ export const MenuSide = () => {
             Категорії товарів
           </SheetTitle>
           <ul className="block lg:hidden">
-            {categoryListData.map((link) => (
-              <li key={link.id}>
-                <Link
-                  className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
-                  href={`/catalog/${link.url}`}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            {categoryListData.map((link) => {
+              if (link.subCategory) {
+                return (
+                  <>
+                    <li key={link.id} className="border-b border-gray-200">
+                      <SheetClose asChild>
+                        <Link
+                          className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
+                          href={`/catalog/${link.url}`}
+                        >
+                          Усi {link.name}
+                        </Link>
+                      </SheetClose>
+                      <ul className="">
+                        {link.subCategory.map(
+                          ([subCategoryName, subCategoryLink]) => (
+                            <li key={subCategoryName}>
+                              <SheetClose asChild>
+                                <Link
+                                  className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
+                                  href={
+                                    link.name ===
+                                    CategoryDisplayNames[Category.Rolls]
+                                      ? `/catalog/${Category.Rolls}/${subCategoryLink}`
+                                      : link.name ===
+                                          CategoryDisplayNames[
+                                            Category.Soundproofing
+                                          ]
+                                        ? `/catalog/${Category.Soundproofing}/${subCategoryLink}`
+                                        : "#"
+                                  }
+                                >
+                                  {link.name ===
+                                  CategoryDisplayNames[Category.Rolls]
+                                    ? SubCategoryRollsDisplayNames[
+                                        subCategoryLink as SubCategoryRolls
+                                      ]
+                                    : link.name ===
+                                        CategoryDisplayNames[
+                                          Category.Soundproofing
+                                        ]
+                                      ? SubCategorySoundproofingDisplayNames[
+                                          subCategoryLink as SubCategorySoundproofing
+                                        ]
+                                      : ""}
+                                </Link>
+                              </SheetClose>
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    </li>
+                  </>
+                );
+              } else {
+                return (
+                  <li key={link.id} className="border-b border-gray-200">
+                    <SheetClose asChild>
+                      <Link
+                        className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
+                        href={`/catalog/${link.url}`}
+                      >
+                        {link.name}
+                      </Link>
+                    </SheetClose>
+                  </li>
+                );
+              }
+            })}
           </ul>
           <Separator className="mt-0" />
           <SheetTitle className="px-4 text-base font-semibold">
@@ -55,13 +123,15 @@ export const MenuSide = () => {
           <ul>
             {contactsData.map((contact: ContactEntityType) => (
               <li key={contact.id}>
-                <a
-                  target="_blank"
-                  className="block cursor-pointer px-4 py-2 text-sm capitalize transition-colors hover:bg-blue-600 hover:text-white md:text-base"
-                  href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
-                >
-                  {contact.typeContact}
-                </a>
+                <SheetClose asChild>
+                  <a
+                    target="_blank"
+                    className="block cursor-pointer px-4 py-2 text-sm capitalize transition-colors hover:bg-blue-600 hover:text-white md:text-base"
+                    href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
+                  >
+                    {contact.typeContact}
+                  </a>
+                </SheetClose>
               </li>
             ))}
           </ul>
@@ -72,12 +142,14 @@ export const MenuSide = () => {
           <ul>
             {pageLinks.map((link) => (
               <li key={link.id}>
-                <Link
-                  className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
-                  href={link.url}
-                >
-                  {link.name}
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
+                    href={link.url}
+                  >
+                    {link.name}
+                  </Link>
+                </SheetClose>
               </li>
             ))}
           </ul>
