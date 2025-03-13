@@ -102,6 +102,7 @@ export const RollsSubcategoriesDescriptions: Record<SubCategoryRolls, string> =
       "Полотно зі спіненого поліетилену зі спеціальною розміткою для простого й швидкого монтажу теплої підлоги. Розмітка полегшує точне розташування нагрівальних елементів. Матеріал володіє чудовими теплоізоляційними та вологостійкими властивостями, створюючи стабільний комфортний мікроклімат. Рекомендується додаткове використання поліетиленової плівки для захисту від вологи.",
   } as const;
 
+// -----------------------SOUDPROOFING---
 export enum SubCategorySoundproofing {
   OdnostronneFolhuvannya = "odnostronne-folhuvannya",
   DvostronneFolhuvannya = "dvostronne-folhuvannya",
@@ -109,7 +110,6 @@ export enum SubCategorySoundproofing {
   OdnostronneFolhuvannyaKley = "odnostronne-folhuvannya-kley",
   RozmitkaTeplaPidloha = "rozmitka-tepla-pidloha",
 }
-// -----------------------SOUDPROOFING---
 export const SubCategorySoundproofingDisplayNames: Record<
   SubCategorySoundproofing,
   string

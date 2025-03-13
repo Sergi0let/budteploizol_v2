@@ -1,17 +1,55 @@
 import { BreadcrumbNavigation, ListItems } from "@/components";
 import { products } from "@/data";
 import {
+  baseUrl,
+  descriptionMetadata,
+  keywordsMetadata,
+  Thumbnail,
+} from "@/data/metadata";
+import {
   Category,
   CategoryDisplayNames,
+  CategoryTitles,
   SubCategorySoundproofing,
   SubCategorySoundproofingDescriptions,
   SubCategorySoundproofingDisplayNames,
 } from "@/types";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dynamicTitle =
+    CategoryTitles[Category.Soundproofing] ?? "Назва за замовчуванням";
+  const dynamicDescription = `Опис для категорії «${descriptionMetadata[Category.Soundproofing]}».`;
+  const dynamicImage = `/cat/${Category.Soundproofing}.webp`;
+  const dynamicKeywords = keywordsMetadata[Category.Soundproofing];
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: dynamicTitle,
+    description: dynamicDescription,
+    keywords: dynamicKeywords,
+    openGraph: {
+      title: dynamicTitle,
+      description: dynamicDescription,
+      url: baseUrl,
+      images: [
+        {
+          url: dynamicImage,
+          secureUrl: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `Зображення для ${dynamicTitle}`,
+        },
+      ],
+      type: "website",
+      siteName: "БУДТЕПЛОІЗОЛ",
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return Object.values(SubCategorySoundproofing).map((subcategory) => ({
-    category: Category.Soundproofing,
     subcategory,
   }));
 }

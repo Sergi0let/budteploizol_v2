@@ -8,17 +8,77 @@ import {
   SectionHeading,
 } from "@/components";
 import { deliveryData, products } from "@/data";
+import { baseUrl, Thumbnail } from "@/data/metadata";
 import { formatPrice } from "@/lib/utils";
-import { Category, CategoryDisplayNames, ProductType } from "@/types";
+import {
+  Category,
+  CategoryDisplayNames,
+  ProductType,
+  SubCategorySoundproofing,
+  SubCategorySoundproofingDisplayNames,
+} from "@/types";
 import { BriefcaseBusiness, CircleCheck, CircleX, Wallet } from "lucide-react";
+import { Metadata } from "next";
 
-const ProductPage = async ({
-  params,
-}: {
-  params: { slug: string; id: string };
-}) => {
-  const { id: idSlug, slug } = params;
-  console.log("params", params, idSlug, slug);
+type Props = {
+  params: { subcategory: string; id?: string };
+};
+
+export async function generateStaticParams() {
+  const productsFiltered = products.filter(
+    (product) => product.category === Category.Soundproofing,
+  );
+  return productsFiltered.map((product) => ({
+    subcategory: product.groupName,
+    id: product.id,
+  }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const dataDisplay: ProductType | undefined = products.find(
+    (item) => item.id === params.id && item.groupName === params.subcategory,
+  );
+
+  if (!dataDisplay) {
+    return {
+      title: "Товар не знайдено | Будтеплоізол",
+      description: "На жаль, товар за таким посиланням не знайдено.",
+    };
+  }
+
+  const dynamicTitle = `Купити ${dataDisplay.name} | Будтеплоізол`;
+  const dynamicDescription =
+    dataDisplay.description?.substring(0, 150) ||
+    "Детальний опис товару, характеристик і способів доставки.";
+
+  const mainImage = `/products/${dataDisplay.image[0]}`;
+
+  return {
+    title: dynamicTitle,
+    description: dynamicDescription,
+
+    openGraph: {
+      title: dynamicTitle,
+      description: dynamicDescription,
+      url: `${baseUrl}/catalog/${Category.Soundproofing}/${params.subcategory}/${params.id}`,
+      images: [
+        {
+          url: mainImage,
+          secureUrl: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: dataDisplay.name,
+        },
+      ],
+
+      type: "website", // або "website", "article" тощо
+      siteName: "БУДТЕПЛОІЗОЛ",
+    },
+  };
+}
+
+const ProductPage = async ({ params }: Props) => {
+  const { id: idSlug, subcategory } = params;
   const dataDisplay: ProductType | undefined = products.find(
     (item) => item.id === idSlug,
   );
@@ -50,13 +110,19 @@ const ProductPage = async ({
             { label: "Головна", href: "/" },
             { label: "Каталог", href: "/catalog" },
             {
-              label: CategoryDisplayNames[Category.Soundproofing],
-              href: `/catalog/${Category.Soundproofing}`,
+              label:
+                CategoryDisplayNames[Category.Soundproofing] ||
+                "Невідома категорія",
+              href: `/catalog/${Category.Soundproofing}/${subcategory}`,
             },
-            // {
-            //   label:SubCategorySoundproofingDisplayNames[SubCategorySoundproofing.Rolls],
-            //   href: `/${Category.Soundproofing}}`,
-            // },
+            {
+              label:
+                SubCategorySoundproofingDisplayNames[
+                  subcategory as SubCategorySoundproofing
+                ] || "Невідома категорія",
+              href: `/catalog/rolls/${subcategory}`,
+            },
+            { label: "Товар" },
           ]}
         />
         <div className="mt-4 flex flex-col gap-2 lg:flex-row">

@@ -6,14 +6,61 @@ import {
   SudiniaDescription,
 } from "@/components";
 import { products } from "@/data";
+import {
+  baseUrl,
+  descriptionMetadata,
+  keywordsMetadata,
+  Thumbnail,
+} from "@/data/metadata";
 import { Category, CategoryDisplayNames, CategoryTitles } from "@/types";
+import { Metadata } from "next";
 import Image from "next/image";
 
-export async function generateStaticParams() {
-  return Object.values(Category).map((category) => ({ slug: category }));
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const categorySlug = params.slug as Category;
+
+  const dynamicTitle = CategoryTitles[categorySlug] ?? "Назва за замовчуванням";
+  const dynamicDescription = `Опис для категорії «${descriptionMetadata[categorySlug]}».`;
+  const dynamicImage = `/cat/${categorySlug}.webp`;
+  const dynamicKeywords = keywordsMetadata[categorySlug] ?? "";
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: dynamicTitle,
+    description: dynamicDescription,
+    keywords: dynamicKeywords,
+    openGraph: {
+      title: dynamicTitle,
+      description: dynamicDescription,
+      url: baseUrl,
+      images: [
+        {
+          url: dynamicImage,
+          secureUrl: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `Зображення для ${dynamicTitle}`,
+        },
+      ],
+      type: "website",
+      siteName: "БУДТЕПЛОІЗОЛ",
+    },
+  };
 }
 
-const CategoryPage = async ({ params }: { params: { slug: string } }) => {
+export async function generateStaticParams() {
+  return Object.values(Category).map((category) => ({
+    slug: category,
+  }));
+}
+
+const CategoryPage = async ({ params }: Props) => {
   const categorySlug = params.slug as Category;
   const dataDispay = products.filter((item) => item.category === categorySlug);
 

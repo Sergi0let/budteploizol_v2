@@ -8,9 +8,76 @@ import {
   SectionHeading,
 } from "@/components";
 import { deliveryData, products } from "@/data";
+import { baseUrl, Thumbnail } from "@/data/metadata";
 import { formatPrice } from "@/lib/utils";
-import { CategoryDisplayNames, ProductType } from "@/types";
+import { Category, CategoryDisplayNames, ProductType } from "@/types";
 import { BriefcaseBusiness, CircleCheck, CircleX, Wallet } from "lucide-react";
+import { Metadata } from "next";
+
+type Props = {
+  params: {
+    slug: string;
+    id: string;
+  };
+};
+
+export async function generateStaticParams() {
+  const productsFiltered = products.filter(
+    (product) =>
+      product.category !== Category.Rolls &&
+      product.category !== Category.Soundproofing,
+  );
+  return productsFiltered.map((product) => ({
+    slug: product.category,
+    id: product.id,
+  }));
+}
+
+/**
+ * Генеруємо динамічні метадані на основі товару
+ */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const dataDisplay: ProductType | undefined = products.find(
+    (item) => item.id === params.id && item.category === params.slug,
+  );
+
+  if (!dataDisplay) {
+    return {
+      title: "Товар не знайдено | Будтеплоізол",
+      description: "На жаль, товар за таким посиланням не знайдено.",
+    };
+  }
+
+  const dynamicTitle = `Купити ${dataDisplay.name} | Будтеплоізол`;
+  const dynamicDescription =
+    dataDisplay.description?.substring(0, 150) ||
+    "Детальний опис товару, характеристик і способів доставки.";
+
+  const mainImage = `/products/${dataDisplay.image[0]}`;
+
+  return {
+    title: dynamicTitle,
+    description: dynamicDescription,
+
+    openGraph: {
+      title: dynamicTitle,
+      description: dynamicDescription,
+      url: `${baseUrl}/catalog/${params.slug}/${params.id}`,
+      images: [
+        {
+          url: mainImage,
+          secureUrl: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: dataDisplay.name,
+        },
+      ],
+
+      type: "website", // або "website", "article" тощо
+      siteName: "БУДТЕПЛОІЗОЛ",
+    },
+  };
+}
 
 const ProductPage = async ({
   params,

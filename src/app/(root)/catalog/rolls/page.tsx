@@ -1,6 +1,12 @@
 import { BreadcrumbNavigation, ListItems } from "@/components";
 import { products } from "@/data";
 import {
+  baseUrl,
+  descriptionMetadata,
+  keywordsMetadata,
+  Thumbnail,
+} from "@/data/metadata";
+import {
   Category,
   CategoryDisplayNames,
   CategoryTitles,
@@ -8,8 +14,40 @@ import {
   SubCategoryRolls,
   SubCategoryRollsDisplayNames,
 } from "@/types";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dynamicTitle =
+    CategoryTitles[Category.Soundproofing] ?? "Назва за замовчуванням";
+  const dynamicDescription = `Опис для категорії «${descriptionMetadata[Category.Rolls]}».`;
+  const dynamicImage = `/cat/${Category.Rolls}.webp`;
+  const dynamicKeywords = keywordsMetadata[Category.Rolls];
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: dynamicTitle,
+    description: dynamicDescription,
+    keywords: dynamicKeywords,
+    openGraph: {
+      title: dynamicTitle,
+      description: dynamicDescription,
+      url: baseUrl,
+      images: [
+        {
+          url: dynamicImage,
+          secureUrl: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `Зображення для ${dynamicTitle}`,
+        },
+      ],
+      type: "website",
+      siteName: "БУДТЕПЛОІЗОЛ",
+    },
+  };
+}
 
 const RollsPage = () => {
   const dataDispay = products.filter(
