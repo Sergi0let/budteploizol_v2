@@ -25,6 +25,7 @@ const CharacteristicsInfo = ({
   if (data === undefined || data.length === 0) {
     return null;
   }
+  console.log(data);
   return (
     <div className={`relative overflow-x-auto ${className}`}>
       <table className="w-full text-left text-sm">

@@ -377,8 +377,8 @@ const CheckoutForm = forwardRef<
             <div className="input-group mb-2">
               <select onChange={handleChange} name="deliveryAddress" id="">
                 <option value="">Адреса складу</option>
-                <option value="Київ, Лівий берегб вул. Гната Xотевича">
-                  Київ, Лівий берегб вул. Гната Xотевича
+                <option value="Київ вул Новозабарська 21 (склад), Київ, Україна">
+                  Київ вул Новозабарська 21 (склад), Київ, Україна
                 </option>
               </select>
             </div>

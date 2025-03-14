@@ -10,8 +10,8 @@ import { Separator } from "../ui/separator";
 export const Footer = () => {
   return (
     <footer className="mt-10 bg-sky-50">
-      <div className="mx-auto grid max-w-7xl gap-4 px-4 py-12 md:grid-cols-2 lg:grid-cols-4">
-        <div className="lg:col-span-2 lg:mr-[10%]">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-start justify-between gap-4 px-4 py-12">
+        <div className="">
           <p className="border-b pb-2 text-2xl font-medium uppercase text-zinc-700">
             Каталог
           </p>
@@ -24,7 +24,7 @@ export const Footer = () => {
                 <Dot className="mr-2 text-blue-600 group-hover:text-green-600" />
                 <Link
                   className="w-full py-4 text-lg text-zinc-500 group-hover:text-blue-600"
-                  href={item.url}
+                  href={`/catalog/${item.url}`}
                 >
                   {item.name}
                 </Link>
@@ -32,7 +32,7 @@ export const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-10 lg:mr-[40%] lg:mt-0">
+        <div className="">
           <p className="border-b pb-2 text-2xl font-medium uppercase text-zinc-700">
             КОРИСТУВАЧУ
           </p>
@@ -49,7 +49,7 @@ export const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-10 lg:mt-0">
+        <div className="">
           <p className="border-b pb-2 text-2xl font-medium uppercase text-zinc-700">
             Budteploizol
           </p>

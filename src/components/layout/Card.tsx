@@ -20,7 +20,7 @@ export const Card = ({
   discount,
   isAvailable,
   category,
-  // unit,
+  unit,
   // layers,
   className,
   groupName,
@@ -51,6 +51,8 @@ export const Card = ({
       наявності
     </>
   );
+
+  console.log(unit);
 
   return (
     <div
@@ -88,6 +90,7 @@ export const Card = ({
             <>
               <p className="text-sm text-gray-400 line-through">
                 {formatPrice(price.retail.withVAT)}
+                <sub className="ml-2">{unit}</sub>
               </p>
               <p className="text-base font-bold text-red-500 sm:text-2xl">
                 {formatPrice(
@@ -96,11 +99,13 @@ export const Card = ({
                     discount.percentage,
                   ),
                 )}
+                <sub className="ml-2">{unit}</sub>
               </p>
             </>
           ) : (
             <p className="text-base font-bold text-zinc-800 sm:text-2xl">
               {formatPrice(price.retail.withVAT)}
+              <sub className="ml-2">{unit}</sub>
             </p>
           )}
         </div>

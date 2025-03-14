@@ -102,7 +102,7 @@ const CategoryPage = async ({
                 {SubCategorySoundproofingDisplayNames[categorySlug]} (
                 {dataDispay.length})
               </h1>
-              <p className="mt-2 rounded-lg bg-white p-3 text-lg text-zinc-800 md:p-6 md:text-xl">
+              <p className="mt-2 rounded-lg bg-white p-3 text-zinc-600 md:p-6 md:text-xl">
                 {SubCategorySoundproofingDescriptions[categorySlug]}
               </p>
             </div>

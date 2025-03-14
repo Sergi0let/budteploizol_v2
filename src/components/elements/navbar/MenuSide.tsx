@@ -59,10 +59,10 @@ export const MenuSide = () => {
                           Усi {link.name}
                         </Link>
                       </SheetClose>
-                      <ul className="">
+                      <ul key={`${link.id}-sub`}>
                         {link.subCategory.map(
-                          ([subCategoryName, subCategoryLink]) => (
-                            <li key={subCategoryName}>
+                          ([subCategoryName, subCategoryLink], i) => (
+                            <li key={`${subCategoryName}-${i}`}>
                               <SheetClose asChild>
                                 <Link
                                   className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
@@ -102,7 +102,10 @@ export const MenuSide = () => {
                 );
               } else {
                 return (
-                  <li key={link.id} className="border-b border-gray-200">
+                  <li
+                    key={`${link.id}-no-sub`}
+                    className="border-b border-gray-200"
+                  >
                     <SheetClose asChild>
                       <Link
                         className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"

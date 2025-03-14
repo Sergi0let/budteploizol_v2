@@ -33,7 +33,10 @@ function Navigation() {
               <NavigationMenuItem key={category.id}>
                 <NavigationMenuTrigger>{category.name}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 text-zinc-800 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul
+                    key={`${category.name}-sub-categories`}
+                    className="grid w-[400px] gap-3 p-4 text-zinc-800 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
+                  >
                     <ListItem
                       key={category.name}
                       href={`/catalog/${category.url}`}

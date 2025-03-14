@@ -98,7 +98,7 @@ const RollsPage = () => {
                       {SubCategoryRollsDisplayNames[subCategory]}
                     </Link>
 
-                    <p className="mt-3 line-clamp-3">
+                    <p className="mt-3 line-clamp-3 text-zinc-600">
                       {RollsSubcategoriesDescriptions[subCategory]}
                     </p>
                   </div>

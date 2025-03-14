@@ -96,10 +96,10 @@ const ProductPage = async ({ params }: Props) => {
     dimensions,
     // discount,
     isAvailable,
-    // unit,
+    unit,
     // layers,
   } = dataDisplay;
-
+  console.log(dimensions);
   // const isDiscounted = discount && discount?.percentage > 0;
 
   return (
@@ -172,6 +172,7 @@ const ProductPage = async ({ params }: Props) => {
                   )} */}
                   <p className="text-3xl font-bold text-zinc-800">
                     {formatPrice(price.retail.withVAT)}
+                    <sub className="ml-2 text-nowrap">/{unit}</sub>
                   </p>
                 </div>
                 <div className="self-center">

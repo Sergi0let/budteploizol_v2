@@ -102,7 +102,7 @@ const ProductPage = async ({
     dimensions,
     // discount,
     isAvailable,
-    // unit,
+    unit,
     // layers,
   } = dataDisplay;
 
@@ -172,6 +172,7 @@ const ProductPage = async ({
                   )} */}
                   <p className="text-3xl font-bold text-zinc-800">
                     {formatPrice(price.retail.withVAT)}
+                    <sub className="ml-2 text-nowrap">/{unit}</sub>
                   </p>
                 </div>
                 <div className="self-center">
@@ -201,13 +202,19 @@ const ProductPage = async ({
               />
 
               <ul className="mt-4 flex flex-wrap gap-3">
-                <li className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2">
+                <li
+                  key={"payment-1"}
+                  className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2"
+                >
                   <Wallet className="mr-1 text-blue-600" />
                   <span className="font-medium text-zinc-800">
                     Оплата при отриманні
                   </span>
                 </li>
-                <li className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2">
+                <li
+                  key={"payment-2"}
+                  className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2"
+                >
                   <BriefcaseBusiness className="mr-1 text-blue-600" />
                   <span className="font-medium text-zinc-800">
                     Безготівковий розрахунок
