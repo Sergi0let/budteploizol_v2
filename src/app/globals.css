@@ -114,7 +114,7 @@ ul {
     --line-offset: calc(var(--gap) / 2);
     --line-color: #e2e8f0;
     align-items: stretch;
-    @apply grid grid-cols-2 flex-wrap gap-[var(--gap)] overflow-hidden rounded-b-lg border md:grid-cols-3 xl:grid-cols-4;
+    @apply grid grid-cols-2 flex-wrap gap-[var(--gap)] overflow-hidden rounded-lg border md:grid-cols-3 xl:grid-cols-4;
   }
   .list-item {
     @apply relative p-px;

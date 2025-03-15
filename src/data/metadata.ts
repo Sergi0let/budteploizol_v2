@@ -43,4 +43,5 @@ export const keywordsMetadata = {
 };
 
 export const Thumbnail = "/favicon/og-main.png";
-export const baseUrl = "https://budteploizol-v2.vercel.app/";
+// export const baseUrl = "https://budteploizol-v2.vercel.app/";
+export const baseUrl = "https://www.budteploizol.com.ua/";

@@ -1,3 +1,4 @@
+import { ContactsIcons } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
@@ -13,6 +14,7 @@ import {
   Category,
   CategoryDisplayNames,
   ContactEntityType,
+  ContactType,
   SubCategoryRolls,
   SubCategoryRollsDisplayNames,
   SubCategorySoundproofing,
@@ -41,63 +43,86 @@ export const MenuSide = () => {
             />
           </figure>
 
-          <Separator className="mt-0 block lg:hidden" />
-          <SheetTitle className="block px-4 text-base font-semibold lg:hidden">
+          <Separator className="mt-0 block xl:hidden" />
+          <SheetTitle className="block px-4 text-base font-semibold xl:hidden">
             Категорії товарів
           </SheetTitle>
-          <ul className="block lg:hidden">
+          <ul className="block xl:hidden">
             {categoryListData.map((link) => {
               if (link.subCategory) {
                 return (
                   <>
-                    <li key={link.id} className="border-b border-gray-200">
-                      <SheetClose asChild>
-                        <Link
-                          className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
-                          href={`/catalog/${link.url}`}
+                    <details
+                      className="accordion-details border-b"
+                      name="contact-info"
+                    >
+                      <summary
+                        role="term"
+                        aria-details="contact-info border-b border-zinc-200"
+                        className="accordion-summary outline-none"
+                      >
+                        <div className="px-4 py-2 text-base uppercase transition-colors hover:bg-blue-600 hover:text-white">
+                          {link.name}
+                        </div>
+                      </summary>
+                    </details>
+                    <div
+                      role="definition"
+                      id="contact-info"
+                      className="accordion-content"
+                    >
+                      <div className="accordion-content-body">
+                        <ul
+                          key={`${link.id}-sub`}
+                          className="space-y-2 border-b py-3"
                         >
-                          Усi {link.name}
-                        </Link>
-                      </SheetClose>
-                      <ul key={`${link.id}-sub`}>
-                        {link.subCategory.map(
-                          ([subCategoryName, subCategoryLink], i) => (
-                            <li key={`${subCategoryName}-${i}`}>
-                              <SheetClose asChild>
-                                <Link
-                                  className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
-                                  href={
-                                    link.name ===
+                          <li key={`${link.id}-sub-first`}>
+                            <SheetClose asChild>
+                              <Link
+                                href={`/catalog/${link.url}`}
+                                className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
+                              >{`Усi ${link.name}`}</Link>
+                            </SheetClose>
+                          </li>
+                          {link.subCategory.map(
+                            ([subCategoryName, subCategoryLink], i) => (
+                              <li key={`${subCategoryName}-${i}`}>
+                                <SheetClose asChild>
+                                  <Link
+                                    className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
+                                    href={
+                                      link.name ===
+                                      CategoryDisplayNames[Category.Rolls]
+                                        ? `/catalog/${Category.Rolls}/${subCategoryLink}`
+                                        : link.name ===
+                                            CategoryDisplayNames[
+                                              Category.Soundproofing
+                                            ]
+                                          ? `/catalog/${Category.Soundproofing}/${subCategoryLink}`
+                                          : "#"
+                                    }
+                                  >
+                                    {link.name ===
                                     CategoryDisplayNames[Category.Rolls]
-                                      ? `/catalog/${Category.Rolls}/${subCategoryLink}`
+                                      ? SubCategoryRollsDisplayNames[
+                                          subCategoryLink as SubCategoryRolls
+                                        ]
                                       : link.name ===
                                           CategoryDisplayNames[
                                             Category.Soundproofing
                                           ]
-                                        ? `/catalog/${Category.Soundproofing}/${subCategoryLink}`
-                                        : "#"
-                                  }
-                                >
-                                  {link.name ===
-                                  CategoryDisplayNames[Category.Rolls]
-                                    ? SubCategoryRollsDisplayNames[
-                                        subCategoryLink as SubCategoryRolls
-                                      ]
-                                    : link.name ===
-                                        CategoryDisplayNames[
-                                          Category.Soundproofing
-                                        ]
-                                      ? SubCategorySoundproofingDisplayNames[
-                                          subCategoryLink as SubCategorySoundproofing
-                                        ]
-                                      : ""}
-                                </Link>
-                              </SheetClose>
-                            </li>
-                          ),
-                        )}
-                      </ul>
-                    </li>
+                                        ? SubCategorySoundproofingDisplayNames[
+                                            subCategoryLink as SubCategorySoundproofing
+                                          ]
+                                        : ""}
+                                  </Link>
+                                </SheetClose>
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </div>
+                    </div>
                   </>
                 );
               } else {
@@ -119,12 +144,32 @@ export const MenuSide = () => {
               }
             })}
           </ul>
-          <Separator className="mt-0" />
-          <SheetTitle className="px-4 text-base font-semibold">
+
+          <SheetTitle className="font-semisbold px-4 text-base">
             Контакти компанії
           </SheetTitle>
-          <ul>
+          <ul className="pl-4">
             {contactsData.map((contact: ContactEntityType) => (
+              <li key={contact.id}>
+                <a
+                  className="flex items-center py-2 text-lg capitalize text-zinc-700 transition-colors duration-500 hover:text-blue-600"
+                  href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
+                >
+                  <ContactsIcons
+                    contactType={contact.typeContact}
+                    className="mr-4 size-8 flex-shrink-0"
+                  />
+                  <span>
+                    {contact.typeContact === ContactType.Kyivstar ||
+                    contact.typeContact === ContactType.Vodafone ||
+                    contact.typeContact === ContactType.Phone
+                      ? contact.phone
+                      : contact.typeContact}
+                  </span>
+                </a>
+              </li>
+            ))}
+            {/* {contactsData.map((contact: ContactEntityType) => (
               <li key={contact.id}>
                 <SheetClose asChild>
                   <a
@@ -136,7 +181,7 @@ export const MenuSide = () => {
                   </a>
                 </SheetClose>
               </li>
-            ))}
+            ))} */}
           </ul>
           <Separator className="mt-0" />
           <SheetTitle className="px-4 text-base font-semibold">

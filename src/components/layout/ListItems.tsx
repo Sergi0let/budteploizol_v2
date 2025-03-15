@@ -15,7 +15,6 @@ export const ListItems = ({ items }: { items: ProductType[] }) => {
   const displayItems = items.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   return (
     <div>
-      <div className="flex h-12 items-center rounded-t-lg border-l border-r border-t px-5"></div>
       <ul className="list-items">
         {displayItems.map((items) => (
           <li className="list-item" key={items.id}>
@@ -26,17 +25,17 @@ export const ListItems = ({ items }: { items: ProductType[] }) => {
       {totalPages > 1 && (
         <div className="mt-4 flex justify-center space-x-2">
           <button
-            className="icon-wrapper disabled:opacity-50"
+            className="icon-wrapper text-blue-600 disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           >
             <ChevronLeft />
           </button>
-          <span className="px-4 py-2 font-mono text-sm text-gray-500">
+          <span className="flex items-center justify-center px-2 font-mono text-sm text-gray-500">
             {currentPage} / {totalPages}
           </span>
           <button
-            className="icon-wrapper disabled:opacity-50"
+            className="icon-wrapper text-blue-600 disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
             disabled={currentPage === totalPages}
             onClick={() =>
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))

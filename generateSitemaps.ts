@@ -4,7 +4,7 @@ import { products } from "./src/data/index";
 import { baseUrl } from "./src/data/metadata";
 const SITE_URL = baseUrl; // Замінити на свій домен
 
-const staticPaths = ["/", "/catalog", "rolls", "zvyko-izol"];
+const staticPaths = ["", "catalog", "rolls", "zvyko-izol"];
 
 async function fetchDynamicPaths() {
   // Тут можна зробити запит до CMS (наприклад, Sanity або Strapi)

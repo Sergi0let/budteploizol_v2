@@ -52,8 +52,6 @@ export const Card = ({
     </>
   );
 
-  console.log(unit);
-
   return (
     <div
       className={`relative flex h-full w-full flex-col justify-between overflow-hidden bg-white p-2 shadow-sm transition-all sm:p-5 ${className}`}

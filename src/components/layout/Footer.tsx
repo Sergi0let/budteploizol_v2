@@ -1,16 +1,16 @@
-import { categoryListData } from "@/data/category";
+import { categoryListData } from "@/data/category"
 
-import { contactPrefix, contactsData, pageLinks } from "@/data";
-import { ContactEntityType, ContactType } from "@/types";
-import { Dot } from "lucide-react";
-import Link from "next/link";
-import { ContactsIcons } from "../icons";
-import { Separator } from "../ui/separator";
+import { contactPrefix, contactsData, pageLinks } from "@/data"
+import { ContactEntityType, ContactType } from "@/types"
+import { Dot } from "lucide-react"
+import Link from "next/link"
+import { ContactsIcons } from "../icons"
+import { Separator } from "../ui/separator"
 
 export const Footer = () => {
   return (
     <footer className="mt-10 bg-sky-50">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-start justify-between gap-4 px-4 py-12">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-start justify-between  gap-8 px-4 py-12">
         <div className="">
           <p className="border-b pb-2 text-2xl font-medium uppercase text-zinc-700">
             Каталог
@@ -82,7 +82,7 @@ export const Footer = () => {
         <div>
           <sup>©</sup> «Budteploizol», 2022-{new Date().getFullYear()}
         </div>
-        <div>розроблено з допомогою Next.js</div>
+        <div>розроблено Вашкевич С.</div>
       </div>
     </footer>
   );

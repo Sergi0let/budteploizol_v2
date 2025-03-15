@@ -34,7 +34,6 @@ const CheckoutForm = forwardRef<
   { onInputChange: () => void; isSubmitting: boolean }
 >(({ onInputChange, isSubmitting }, ref) => {
   const [formData, setFormData] = useState<FormDataType>(initialFormData);
-  console.log(formData);
 
   const {
     city,
@@ -83,8 +82,6 @@ const CheckoutForm = forwardRef<
   const isDeliveryInfoValid =
     formData.deliveryType && formData.deliveryAddress && formData.deliveryCity;
 
-  const isPaymentInfoValid = formData.paymentType;
-
   useEffect(() => {
     if (cities.length === 1) {
       const city = cities[0] as { Ref: string; Description: string };
@@ -119,13 +116,17 @@ const CheckoutForm = forwardRef<
     <form
       ref={ref}
       id="checkout-form"
-      className="relative mt-4 rounded-lg bg-white p-4"
+      className="relative mt-4 rounded-lg bg-white px-8 py-2"
       onInput={onInputChange}
     >
-      <details className="accordion-details" name="contact-info">
+      <details
+        open={true}
+        className="accordion-details border-b"
+        name="contact-info"
+      >
         <summary
           role="term"
-          aria-details="contact-info"
+          aria-details="contact-info border-b border-zinc-200"
           className="accordion-summary"
         >
           <div className="flex items-center justify-between pt-4">
@@ -147,7 +148,7 @@ const CheckoutForm = forwardRef<
         </summary>
       </details>
       <div role="definition" id="contact-info" className="accordion-content">
-        <div className="accordion-content-body lg:grid lg:grid-cols-2 lg:gap-x-4">
+        <div className="accordion-content-body mt-4 lg:grid lg:grid-cols-2 lg:gap-x-4">
           <div className="input-group mb-1">
             <label htmlFor="lastname">
               Прізвище <sup className="text-red-500">&lowast;</sup>
@@ -244,7 +245,10 @@ const CheckoutForm = forwardRef<
       </div>
 
       {/* Спосіб доставки */}
-      <details className="accordion-details outline-none" name="delivery-info">
+      <details
+        className="accordion-details border-b outline-none"
+        name="delivery-info"
+      >
         <summary
           role="term"
           aria-details="delivery-info"
@@ -273,7 +277,7 @@ const CheckoutForm = forwardRef<
         id="delivery-info"
         className="accordion-content outline-none"
       >
-        <div className="accordion-content-body">
+        <div className="accordion-content-body mt-4">
           <div className="input-group mb-1">
             <label htmlFor="deliveryType">
               Спосіб доставки <sup className="text-red-500">&lowast;</sup>
@@ -399,7 +403,10 @@ const CheckoutForm = forwardRef<
       </div>
 
       {/* Спосіб оплати */}
-      <details className="accordion-details outline-none" name="payment-info">
+      <details
+        className="accordion-details border-b outline-none"
+        name="payment-info"
+      >
         <summary
           role="term"
           aria-details="payment-info"
@@ -409,12 +416,6 @@ const CheckoutForm = forwardRef<
             <p className="cursor-default text-xl uppercase text-zinc-800 md:text-2xl">
               3. Спосіб оплати
             </p>
-            {isPaymentInfoValid && (
-              <div className="flex cursor-pointer items-center gap-0.5 text-xs text-blue-600">
-                <Pencil className="size-4" />
-                <span>Редагувати</span>
-              </div>
-            )}
           </div>
           <div
             className={`my-1 flex h-4 items-center text-xs text-zinc-800 opacity-0 transition-opacity duration-500 lg:text-base ${isContactInfoValid && "h-9 opacity-100"}`}
@@ -424,7 +425,7 @@ const CheckoutForm = forwardRef<
         </summary>
       </details>
       <div role="definition" id="payment-info" className="accordion-content">
-        <div className="accordion-content-body">
+        <div className="accordion-content-body mt-4 space-y-4">
           <div>
             <input
               className="mr-2"
@@ -435,7 +436,10 @@ const CheckoutForm = forwardRef<
               checked={formData.paymentType === "payAfterGetting"}
               onChange={handleChange}
             />
-            <label htmlFor="payOne" className="text-lg text-zinc-800">
+            <label
+              htmlFor="payOne"
+              className="cursor-pointer text-lg text-zinc-800"
+            >
               Оплата при отриманні товару
             </label>
           </div>
@@ -450,7 +454,10 @@ const CheckoutForm = forwardRef<
               checked={formData.paymentType === "payNoCash"}
               onChange={handleChange}
             />
-            <label htmlFor="payTwo" className="text-lg text-zinc-800">
+            <label
+              htmlFor="payTwo"
+              className="cursor-pointer text-lg text-zinc-800"
+            >
               Безготівковий розрахунок
             </label>
           </div>

@@ -26,8 +26,8 @@ export const CouroselList = ({ listItems, className }: CouroselListProps) => {
       <Splide
         options={{
           rewind: true,
-          perPage: isDesktop ? 4 : isTablet ? 3 : isMobile ? 1 : 1,
-          type: isMobile ? "fade" : "slide",
+          perPage: isDesktop ? 4 : isTablet ? 3 : isMobile ? 2 : 2,
+          type: "slide",
           gap: "1rem",
           autoplay: true,
           interval: 3000,

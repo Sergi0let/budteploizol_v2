@@ -36,7 +36,7 @@ export const ProductSlider = ({ productImages }: ProductSliderProps) => {
             className="h-full w-full object-contain"
           />
         </div>
-        <div className="flex snap-x snap-mandatory justify-center space-x-4 overflow-x-auto">
+        <div className="-my-3 flex snap-x snap-mandatory justify-center space-x-4 overflow-x-auto">
           {productImages.length > 1 &&
             productImages.map((image, index) => (
               <button

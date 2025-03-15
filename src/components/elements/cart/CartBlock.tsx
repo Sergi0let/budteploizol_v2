@@ -7,7 +7,7 @@ import {
   useWindowScreenSize,
 } from "@/hooks";
 import { formatPrice } from "@/lib/utils";
-import { Gift, Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,9 +15,8 @@ const OrderBtn = () => {
   return (
     <Link
       href="/checkout"
-      className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white"
+      className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-3 text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white"
     >
-      <Gift />
       <span className="text-xl font-medium">Оформити</span>
     </Link>
   );
@@ -202,7 +201,7 @@ const CartBlock = () => {
           <span className="mr-4 text-xl font-medium text-zinc-800 md:text-3xl">
             Всього: <b>{formatPrice(cartTotalPrice)}</b>
           </span>
-          <div className="max-w-[160px]">
+          <div className="w-32 md:w-1/3">
             <OrderBtn />
           </div>
         </div>

@@ -9,7 +9,7 @@ type CategorieItemType = CategoryLinksType & { i: number };
 const CategoriesItem = ({ url, name, image, i }: CategorieItemType) => {
   return (
     <li
-      className={`group overflow-hidden rounded-lg border ${i === 0 || i === 1 ? "min-[512px]:col-span-6" : "min-[512px]:col-span-6 md:col-span-4"}`}
+      className={`group overflow-hidden rounded-lg border ${i === 0 || i === 1 ? "min-[375px]:col-span-6" : "min-[375px]:col-span-6 md:col-span-4"}`}
     >
       <Link href={`/catalog/${url}`}>
         <figure>
@@ -41,7 +41,7 @@ type CategoriesProps = { catData: CategoryLinksType[]; isPage?: boolean };
 
 const CategoriesList = ({ catData }: CategoriesProps) => {
   return (
-    <ul className="mt-3 grid gap-2 min-[512px]:grid-cols-12 md:mt-7 md:gap-3 lg:gap-4">
+    <ul className="mt-3 grid gap-2 min-[375px]:grid-cols-12 md:mt-7 md:gap-3 lg:gap-4">
       {catData?.map(({ id, url, name, image }, i) => (
         <CategoriesItem key={id} url={url} name={name} image={image} i={i} />
       ))}

@@ -23,7 +23,7 @@ const Hero = () => {
         </div>
         <a
           href=""
-          className="mt-3 block text-zinc-800 after:content-['_↗'] hover:text-blue-600 md:mt-5"
+          className="mt-3 block text-zinc-800 transition-colors after:content-['_↗'] hover:text-blue-600 md:mt-5"
         >
           <Headset className="mr-1 inline-block size-6" /> Зв’яжіться з нами вже
           сьогодні та отримайте персональну консультацію!

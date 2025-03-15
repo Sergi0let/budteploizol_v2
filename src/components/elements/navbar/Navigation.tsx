@@ -25,7 +25,7 @@ import {
 
 function Navigation() {
   return (
-    <NavigationMenu className="hidden lg:block">
+    <NavigationMenu className="hidden xl:block">
       <NavigationMenuList>
         {categoryListData.map((category) => {
           if (category.subCategory && category.subCategory.length > 0) {

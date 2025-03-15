@@ -3,7 +3,6 @@ import {
   BtnOpenCart,
   CharacteristicsInfo,
   DeliveryInfo,
-  ProductCartActions,
   ProductSlider,
   SectionHeading,
 } from "@/components";
@@ -122,7 +121,6 @@ const ProductPage = async ({
                 ] || "Невідома категорія",
               href: `/catalog/${slug}`,
             },
-            { label: "Товар" },
           ]}
         />
         <div className="mt-4 flex flex-col gap-2 lg:flex-row">
@@ -176,13 +174,13 @@ const ProductPage = async ({
                   </p>
                 </div>
                 <div className="self-center">
-                  <ProductCartActions
+                  {/* <ProductCartActions
                     className="w-fit justify-self-end md:justify-self-center"
                     id={id}
-                  />
+                  /> */}
                 </div>
                 <div className="col-span-full mt-6 w-full md:col-auto md:mt-0">
-                  <BtnOpenCart />
+                  <BtnOpenCart id={id} />
                 </div>
               </div>
             </div>

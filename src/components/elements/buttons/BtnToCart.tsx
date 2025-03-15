@@ -4,13 +4,12 @@ import { useLocalStorage } from "@/hooks";
 import { ShoppingCart } from "lucide-react";
 
 type CartItem = {
-  id: number;
+  id: number | string;
   quantity: number;
 };
 
-const BtnToCart = ({ id }: { id: number }) => {
-  const [cart, setCart] = useLocalStorage<CartItem[]>("cart", []);
-  console.log("BtnToCart: ", cart);
+const BtnToCart = ({ id }: { id: number | string; withText?: boolean }) => {
+  const [, setCart] = useLocalStorage<CartItem[]>("cart", []);
 
   const handleAddToCart = () => {
     setCart((prevCart) => {

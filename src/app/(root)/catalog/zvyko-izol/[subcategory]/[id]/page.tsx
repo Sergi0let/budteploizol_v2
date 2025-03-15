@@ -3,7 +3,6 @@ import {
   BtnOpenCart,
   CharacteristicsInfo,
   DeliveryInfo,
-  ProductCartActions,
   ProductSlider,
   SectionHeading,
 } from "@/components";
@@ -99,7 +98,7 @@ const ProductPage = async ({ params }: Props) => {
     unit,
     // layers,
   } = dataDisplay;
-  console.log(dimensions);
+
   // const isDiscounted = discount && discount?.percentage > 0;
 
   return (
@@ -108,12 +107,18 @@ const ProductPage = async ({ params }: Props) => {
         <BreadcrumbNavigation
           items={[
             { label: "Головна", href: "/" },
-            { label: "Каталог", href: "/catalog" },
+
             {
-              label:
-                CategoryDisplayNames[Category.Soundproofing] ||
-                "Невідома категорія",
-              href: `/catalog/${Category.Soundproofing}/${subcategory}`,
+              label: "",
+              dropdownItems: [
+                { label: "Каталог", href: "/catalog" },
+                {
+                  label:
+                    CategoryDisplayNames[Category.Soundproofing] ||
+                    "Невідома категорія",
+                  href: `/catalog/${Category.Soundproofing}/${subcategory}`,
+                },
+              ],
             },
             {
               label:
@@ -122,7 +127,6 @@ const ProductPage = async ({ params }: Props) => {
                 ] || "Невідома категорія",
               href: `/catalog/rolls/${subcategory}`,
             },
-            { label: "Товар" },
           ]}
         />
         <div className="mt-4 flex flex-col gap-2 lg:flex-row">
@@ -175,14 +179,9 @@ const ProductPage = async ({ params }: Props) => {
                     <sub className="ml-2 text-nowrap">/{unit}</sub>
                   </p>
                 </div>
-                <div className="self-center">
-                  <ProductCartActions
-                    className="w-fit justify-self-end md:justify-self-center"
-                    id={id}
-                  />
-                </div>
+                <div className="self-center"></div>
                 <div className="col-span-full mt-6 w-full md:col-auto md:mt-0">
-                  <BtnOpenCart />
+                  <BtnOpenCart id={id} />
                 </div>
               </div>
             </div>
