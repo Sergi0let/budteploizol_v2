@@ -21,14 +21,11 @@ const useNovaPoshta = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_URL + "/api/novaposhta/cities",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cityName }),
-        },
-      );
+      const response = await fetch("/api/novaposhta/cities", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cityName }),
+      });
 
       const data = await response.json();
       setCities(data || []);
@@ -48,14 +45,11 @@ const useNovaPoshta = () => {
     setWarehouses([]);
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_URL + "/api/novaposhta/warehouses",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cityRef, searchNumber }),
-        },
-      );
+      const response = await fetch("/api/novaposhta/warehouses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cityRef, searchNumber }),
+      });
 
       const data = await response.json();
       setWarehouses(data || []);

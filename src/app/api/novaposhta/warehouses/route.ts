@@ -24,7 +24,11 @@ export async function POST(req: Request) {
 
     const response = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      },
       body: JSON.stringify({
         apiKey: API_KEY,
         modelName: "Address",
