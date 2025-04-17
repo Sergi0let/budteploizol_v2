@@ -9,8 +9,7 @@
     "postbuild": "npx tsx generateSitemaps.ts",
     "start": "next start",
     "lint": "next lint",
-    "generate:sitemap": "npx tsx generateSitemaps.ts",
-    "export": "next export"
+    "generate:sitemap": "npx tsx generateSitemaps.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.5",
