@@ -29,7 +29,7 @@ const BtnToCart = ({ id }: { id: number | string; withText?: boolean }) => {
   return (
     <button
       onClick={handleAddToCart}
-      className="flex size-12 items-center justify-center rounded-full bg-blue-600 transition-colors hover:bg-blue-600 md:size-14"
+      className="flex size-12 items-center justify-center rounded-full bg-[var(--main-primary)] transition-colors hover:bg-[var(--main-primary)] md:size-14"
     >
       <ShoppingCart className="size:4 text-white md:size-8" />
       <span className="sr-only">додоти до кошика</span>

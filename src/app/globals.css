@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 :root {
+  --main-primary: #f8951d; /* + */
+  --main-secondary: #ffae4a; /* + */
+  --main-light: #ffc073;
+  --main-dark: #d97a06;
+  --main-darker: #a15900;
+
+  --secondary-primary: #f8be1d;
+  --secondary-secondary: #ffda73; /* + */
+  --secondary-light: #fcf3d9fc;
+  --secondary-dark: #cc9704; /* + */
+  --secondary-darker: #a17600;
+
+  --tetriary-primary: #1a6d9e;
+  --tetriary-secondary: #5c9abf;
+  --tetriary-light: #377ea8;
+  --tetriary-dark: #0a5582;
+  --tetriary-darker: #054367;
+
+  --quaternary-primary: #6c3b9e; /* фіолетовий, як у фази глибокого задуму */
+  --quaternary-secondary: #9b6ec1; /* м’який, для наведених станів */
+  --quaternary-light: #b898d1; /* приглушений, під фон */
+  --quaternary-dark: #4a2673; /* для акцентів */
+  --quaternary-darker: #341a52;
+
   --bg-gradient: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,
@@ -35,7 +59,7 @@ ul {
     text-overflow: ellipsis; /* Додає три крапки (...) після обрізання */
   }
   .icon-wrapper {
-    @apply flex size-10 items-center justify-center rounded-lg border transition-colors hover:bg-blue-50 hover:text-blue-600 focus:outline-none sm:size-12;
+    @apply flex size-10 items-center justify-center rounded-lg border transition-colors hover:bg-blue-50 hover:text-[var(--main-primary)] focus:outline-none sm:size-12;
   }
   /* Carousels */
   .custom-wrapper .splide__track {
@@ -61,17 +85,17 @@ ul {
     transform: translateY(0);
   }
   .custom-wrapper .splide__arrow {
-    @apply flex size-8 items-center justify-center rounded-full border transition-colors hover:bg-sky-50 hover:text-blue-600 focus:outline-none sm:size-10;
+    @apply flex size-8 items-center justify-center rounded-full border transition-colors hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)] focus:outline-none sm:size-10;
   }
   .custom-wrapper .splide__arrow svg {
-    @apply !rotate-0 fill-none text-blue-600;
+    @apply !rotate-0 fill-none text-[var(--main-primary)];
   }
 
   .custom-wrapper .splide__pagination li .splide__pagination__page {
     @apply bg-blue-200;
   }
   .custom-wrapper .splide__pagination li .splide__pagination__page.is-active {
-    @apply bg-blue-600;
+    @apply bg-[var(--main-primary)];
   }
   /* --------- */
   /* Main block */

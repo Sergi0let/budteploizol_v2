@@ -33,7 +33,7 @@ const CharacteristicsInfo = ({
           {Object.entries(data).map(([type, value], i) => (
             <tr
               key={i}
-              className={`${i % 2 === 0 ? "bg-white" : "bg-sky-50"} `}
+              className={`${i % 2 === 0 ? "bg-white" : "bg-[var(--secondary-light)]"} `}
             >
               <th className="rounded-l-lg px-4 py-4 font-normal text-gray-400">
                 {translateKey(type)}

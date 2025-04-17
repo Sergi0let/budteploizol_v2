@@ -134,7 +134,7 @@ const CheckoutForm = forwardRef<
               1. Контактна інформація
             </p>
             {isContactInfoValid && (
-              <div className="flex cursor-pointer items-center gap-0.5 text-xs text-blue-600">
+              <div className="flex cursor-pointer items-center gap-0.5 text-xs text-[var(--main-primary)]">
                 <Pencil className="size-4" />
                 <span>Редагувати</span>
               </div>
@@ -237,7 +237,7 @@ const CheckoutForm = forwardRef<
             onClick={(e) =>
               handleOpenSpoller("contact-info", "delivery-info", e)
             }
-            className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:mt-4"
+            className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-[var(--main-primary)] px-2 uppercase text-white transition-colors duration-500 hover:bg-[var(--main-dark)] hover:text-white md:mt-4"
           >
             <span>ПРОДОВЖИТИ ОФОРМЛЕННЯ</span>
           </button>
@@ -259,7 +259,7 @@ const CheckoutForm = forwardRef<
               2. Спосіб доставки
             </p>
             {isDeliveryInfoValid && (
-              <div className="flex cursor-pointer items-center gap-0.5 text-xs text-blue-600">
+              <div className="flex cursor-pointer items-center gap-0.5 text-xs text-[var(--main-primary)]">
                 <Pencil className="size-4" />
                 <span>Редагувати</span>
               </div>
@@ -395,7 +395,7 @@ const CheckoutForm = forwardRef<
             onClick={(e) =>
               handleOpenSpoller("delivery-info", "payment-info", e)
             }
-            className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:mt-4"
+            className="col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg bg-[var(--main-primary)] px-2 uppercase text-white transition-colors duration-500 hover:bg-[var(--main-dark)] hover:text-white md:mt-4"
           >
             <span>ПРОДОВЖИТИ ОФОРМЛЕННЯ</span>
           </button>

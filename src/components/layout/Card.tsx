@@ -77,7 +77,7 @@ export const Card = ({
             <p className="truncate text-nowrap">{availableBlock}</p>
             <p className="truncate text-nowrap">Артикул: 50105</p>
           </div>
-          <h3 className="text-clamp h-auto flex-grow text-balance text-base font-medium text-zinc-800 transition-colors group-hover:text-blue-600 md:text-xl">
+          <h3 className="text-clamp h-auto flex-grow text-balance text-base font-medium text-zinc-800 transition-colors group-hover:text-[var(--main-primary)] md:text-xl">
             {name}
           </h3>
         </div>
@@ -111,7 +111,7 @@ export const Card = ({
         <div className="flex flex-col items-start gap-1">
           <button
             onClick={() => increaseItemQuantity(id)}
-            className="flex size-12 items-center justify-center rounded-full bg-sky-50 text-blue-600 transition-colors duration-500 hover:bg-blue-600 hover:text-white md:size-14"
+            className="flex size-12 items-center justify-center rounded-full bg-[var(--secondary-light)] text-[var(--main-primary)] transition-colors duration-500 hover:bg-[var(--main-primary)] hover:text-white md:size-14"
           >
             <ShoppingCart className="size:4 md:size-6" />
           </button>

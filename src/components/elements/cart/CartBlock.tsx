@@ -15,7 +15,7 @@ const OrderBtn = () => {
   return (
     <Link
       href="/checkout"
-      className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-3 text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white"
+      className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-[var(--main-primary)] px-3 text-white transition-colors duration-500 hover:bg-[var(--main-secondary)] hover:text-white"
     >
       <span className="text-xl font-medium">Оформити</span>
     </Link>
@@ -87,7 +87,7 @@ const CartBlock = () => {
               <div className="w-fit text-center">
                 <div className="flex h-12 items-center overflow-hidden rounded-lg border">
                   <button
-                    className={`flex h-full min-w-10 items-center justify-center px-2 transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600 ${product?.quantity === 0 && "text-gray-400"}`}
+                    className={`flex h-full min-w-10 items-center justify-center px-2 transition-colors duration-500 hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)] ${product?.quantity === 0 && "text-gray-400"}`}
                     onClick={() => decreaseItemQuantity(product?.id ?? 0)}
                     disabled={product?.quantity === 0 ? true : undefined}
                   >
@@ -97,14 +97,14 @@ const CartBlock = () => {
                     {product?.quantity}
                   </span>
                   <button
-                    className="flex h-full min-w-10 items-center justify-center px-2 text-center transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600"
+                    className="flex h-full min-w-10 items-center justify-center px-2 text-center transition-colors duration-500 hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)]"
                     onClick={() => increaseItemQuantity(product?.id ?? 0)}
                   >
                     <Plus className="size-4" />
                   </button>
                 </div>
                 <button
-                  className="mt-2 text-zinc-500 underline decoration-dashed underline-offset-4 hover:text-blue-600"
+                  className="mt-2 text-zinc-500 underline decoration-dashed underline-offset-4 hover:text-[var(--main-primary)]"
                   onClick={() => removeItemFromCart(product?.id ?? 0)}
                 >
                   видалити

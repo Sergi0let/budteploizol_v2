@@ -108,7 +108,7 @@ const ProductPage = async ({
   // const isDiscounted = discount && discount?.percentage > 0;
 
   return (
-    <main className="bg-sky-50 px-4 py-6 md:py-9">
+    <main className="bg-[var(--secondary-light)] px-4 py-6 md:py-9">
       <div className="container mx-auto max-w-7xl">
         <BreadcrumbNavigation
           items={[
@@ -204,7 +204,7 @@ const ProductPage = async ({
                   key={"payment-1"}
                   className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2"
                 >
-                  <Wallet className="mr-1 text-blue-600" />
+                  <Wallet className="mr-1 text-[var(--main-primary)]" />
                   <span className="font-medium text-zinc-800">
                     Оплата при отриманні
                   </span>
@@ -213,7 +213,7 @@ const ProductPage = async ({
                   key={"payment-2"}
                   className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2"
                 >
-                  <BriefcaseBusiness className="mr-1 text-blue-600" />
+                  <BriefcaseBusiness className="mr-1 text-[var(--main-primary)]" />
                   <span className="font-medium text-zinc-800">
                     Безготівковий розрахунок
                   </span>

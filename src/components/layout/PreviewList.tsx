@@ -25,7 +25,7 @@ export const PreviewList = ({
           />
           <Link
             href={showAllLink}
-            className="mr-4 flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-sky-50 text-blue-600 transition-colors duration-500 hover:bg-blue-600 hover:text-white md:text-lg"
+            className="mr-4 flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--secondary-light)] text-[var(--main-primary)] transition-colors duration-500 hover:bg-[var(--main-primary)] hover:text-white md:text-lg"
           >
             <ChevronRight className="float-right translate-x-[1px]" />
           </Link>

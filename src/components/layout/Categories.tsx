@@ -24,10 +24,10 @@ const CategoriesItem = ({ url, name, image, i }: CategorieItemType) => {
             />
           </div>
           <figcaption className="flex items-center gap-2 border-t p-3 md:p-5">
-            <span className="transition-color line-clamp-1 flex-1 text-xl text-zinc-800 duration-500 group-hover:text-blue-600 md:text-2xl">
+            <span className="transition-color line-clamp-1 flex-1 text-xl text-zinc-800 duration-500 group-hover:text-[var(--main-primary)] md:text-2xl">
               {name}
             </span>
-            <span className="flex size-6 items-center justify-center rounded-full bg-blue-600 transition-transform duration-500 group-hover:rotate-45 md:size-8">
+            <span className="flex size-6 items-center justify-center rounded-full bg-[var(--main-primary)] transition-all duration-500 group-hover:rotate-45 group-hover:bg-[var(--secondary-dark)] md:size-8">
               <ArrowUpRight className="size-4 text-white md:size-6" />
             </span>
           </figcaption>

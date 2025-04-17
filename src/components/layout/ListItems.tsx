@@ -25,7 +25,7 @@ export const ListItems = ({ items }: { items: ProductType[] }) => {
       {totalPages > 1 && (
         <div className="mt-4 flex justify-center space-x-2">
           <button
-            className="icon-wrapper text-blue-600 disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
+            className="icon-wrapper text-[var(--main-primary)] disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           >
@@ -35,7 +35,7 @@ export const ListItems = ({ items }: { items: ProductType[] }) => {
             {currentPage} / {totalPages}
           </span>
           <button
-            className="icon-wrapper text-blue-600 disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
+            className="icon-wrapper text-[var(--main-primary)] disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-300"
             disabled={currentPage === totalPages}
             onClick={() =>
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))

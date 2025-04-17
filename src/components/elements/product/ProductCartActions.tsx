@@ -25,7 +25,7 @@ const ProductCartActions = ({ id, className }: ProductCartActionsProps) => {
       className={`flex h-12 items-center overflow-hidden rounded-lg border ${className}`}
     >
       <button
-        className={`flex h-full min-w-10 items-center justify-center px-2 transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600 ${currentAmount === 0 && "text-gray-400"}`}
+        className={`flex h-full min-w-10 items-center justify-center px-2 transition-colors duration-500 hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)] ${currentAmount === 0 && "text-gray-400"}`}
         onClick={() => decreaseItemQuantity(id)}
         disabled={currentAmount === 0 ? true : undefined}
       >
@@ -35,7 +35,7 @@ const ProductCartActions = ({ id, className }: ProductCartActionsProps) => {
         {currentAmount}
       </span>
       <button
-        className="flex h-full min-w-10 items-center justify-center px-2 text-center transition-colors duration-500 hover:bg-sky-50 hover:text-blue-600"
+        className="flex h-full min-w-10 items-center justify-center px-2 text-center transition-colors duration-500 hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)]"
         onClick={() => increaseItemQuantity(id)}
       >
         <Plus className="size-4" />

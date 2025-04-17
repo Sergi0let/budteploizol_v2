@@ -8,7 +8,7 @@ const CartComponent = dynamic(
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 mt-0 bg-white px-4 py-2 text-center shadow-md md:py-4">
+    <header className="sticky top-0 z-50 mt-0 bg-white p-1 px-4 text-center shadow-md">
       <div className="container mx-auto flex max-w-7xl items-center justify-between gap-4">
         <Logo className="sm:mr-3.5" />
         <Navigation />

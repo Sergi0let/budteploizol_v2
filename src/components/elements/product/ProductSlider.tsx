@@ -44,7 +44,7 @@ export const ProductSlider = ({ productImages }: ProductSliderProps) => {
                 onClick={() => setCurrentImage(index)}
                 className={`size-20 flex-shrink-0 snap-center overflow-hidden rounded-lg border md:size-28 ${
                   index === currentImage
-                    ? "border-2 border-blue-600 opacity-80"
+                    ? "border-2 border-[var(--main-primary)] opacity-80"
                     : "border-2 border-gray-200"
                 }`}
               >

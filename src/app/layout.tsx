@@ -1,14 +1,14 @@
-import { ShopingCartProvider } from "@/context/ShopingCartContext"
+import { ShopingCartProvider } from "@/context/ShopingCartContext";
 import {
   baseUrl,
   descriptionMetadata,
   keywordsMetadata,
   Thumbnail,
   titleMetadata,
-} from "@/data/metadata"
-import type { Metadata } from "next"
-import localFont from "next/font/local"
-import "./globals.css"
+} from "@/data/metadata";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
 
 const inter_24pt = localFont({
   src: [
@@ -19,7 +19,7 @@ const inter_24pt = localFont({
     { path: "./fonts/Inter_24pt-Black.woff2", weight: "900" },
   ],
   variable: "--font-inter_24pt",
-})
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -27,6 +27,19 @@ export async function generateMetadata(): Promise<Metadata> {
     title: titleMetadata.main,
     description: descriptionMetadata.main,
     keywords: keywordsMetadata.main,
+    icons: {
+      icon: "/favicon/favicon.ico",
+      apple: "/favicon/apple-icon.png",
+      shortcut: "/favicon/favicon.ico",
+      other: [
+        {
+          rel: "mask-icon",
+          url: "/favicon/mask-icon.svg",
+          color: "#f2e9f2",
+        },
+      ],
+    },
+    manifest: "/favicon/manifest.json",
     openGraph: {
       title: titleMetadata.main,
       description: descriptionMetadata.main,
@@ -43,13 +56,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       siteName: "БУДТЕПЛОІЗОЛ",
     },
-  }
+  };
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="uk-UA">
@@ -59,5 +72,5 @@ export default function RootLayout({
         <ShopingCartProvider>{children}</ShopingCartProvider>
       </body>
     </html>
-  )
+  );
 }

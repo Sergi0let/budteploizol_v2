@@ -16,7 +16,7 @@ const Logo = ({ className }: LogoProps) => {
         src="/logo/logo-main.png"
         width={160}
         height={41}
-        className="min-w-[90px] sm:w-[120px] xl:w-[160px]"
+        className="w-[60px] min-w-[60px] md:w-[100px]"
         alt="Logo"
       />
     </Link>

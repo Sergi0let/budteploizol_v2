@@ -61,7 +61,7 @@ export const MenuSide = () => {
                         aria-details="contact-info border-b border-zinc-200"
                         className="accordion-summary outline-none"
                       >
-                        <div className="px-4 py-2 text-base uppercase transition-colors hover:bg-blue-600 hover:text-white">
+                        <div className="px-4 py-2 text-base uppercase transition-colors hover:bg-[var(--main-primary)] hover:text-white">
                           {link.name}
                         </div>
                       </summary>
@@ -80,7 +80,7 @@ export const MenuSide = () => {
                             <SheetClose asChild>
                               <Link
                                 href={`/catalog/${link.url}`}
-                                className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
+                                className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)] md:text-base"
                               >{`Усi ${link.name}`}</Link>
                             </SheetClose>
                           </li>
@@ -89,7 +89,7 @@ export const MenuSide = () => {
                               <li key={`${subCategoryName}-${i}`}>
                                 <SheetClose asChild>
                                   <Link
-                                    className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-sky-50 hover:text-blue-600 md:text-base"
+                                    className="mx-2 block cursor-pointer rounded-lg py-1 pl-4 pr-1 text-sm transition-colors hover:bg-[var(--secondary-light)] hover:text-[var(--main-primary)] md:text-base"
                                     href={
                                       link.name ===
                                       CategoryDisplayNames[Category.Rolls]
@@ -133,7 +133,7 @@ export const MenuSide = () => {
                   >
                     <SheetClose asChild>
                       <Link
-                        className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
+                        className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-[var(--main-primary)] hover:text-white"
                         href={`/catalog/${link.url}`}
                       >
                         {link.name}
@@ -152,7 +152,7 @@ export const MenuSide = () => {
             {contactsData.map((contact: ContactEntityType) => (
               <li key={contact.id}>
                 <a
-                  className="flex items-center py-2 text-lg capitalize text-zinc-700 transition-colors duration-500 hover:text-blue-600"
+                  className="flex items-center py-2 text-lg capitalize text-zinc-700 transition-colors duration-500 hover:text-[var(--main-primary)]"
                   href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
                 >
                   <ContactsIcons
@@ -174,7 +174,7 @@ export const MenuSide = () => {
                 <SheetClose asChild>
                   <a
                     target="_blank"
-                    className="block cursor-pointer px-4 py-2 text-sm capitalize transition-colors hover:bg-blue-600 hover:text-white md:text-base"
+                    className="block cursor-pointer px-4 py-2 text-sm capitalize transition-colors hover:bg-[var(--main-primary)] hover:text-white md:text-base"
                     href={`${contactPrefix[contact.typeContact]}${contact.phone}`}
                   >
                     {contact.typeContact}
@@ -192,7 +192,7 @@ export const MenuSide = () => {
               <li key={link.id}>
                 <SheetClose asChild>
                   <Link
-                    className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-blue-600 hover:text-white"
+                    className="block cursor-pointer px-4 py-2 uppercase transition-colors hover:bg-[var(--main-primary)] hover:text-white"
                     href={link.url}
                   >
                     {link.name}

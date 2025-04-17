@@ -75,7 +75,7 @@ const RollsPage = () => {
               className={`${Object.values(SubCategorySoundproofing).length - 1 === i ? "mb-0" : "mb-4"}`}
             >
               <Link
-                className="block text-lg font-medium text-blue-600 after:content-['_↗'] hover:text-sky-700"
+                className="block text-lg font-medium text-[var(--main-primary)] after:content-['_↗'] hover:text-sky-700"
                 href={`/catalog/${Category.Soundproofing}/${subCategory}`}
               >
                 {SubCategorySoundproofingDisplayNames[subCategory]}

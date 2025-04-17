@@ -144,7 +144,7 @@ const Checkout = () => {
             </span>
           </div>
           <div className="mt-4 flex items-end justify-between gap-4 border-t border-sky-50 pt-4">
-            {/* <button className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0">
+            {/* <button className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-[var(--main-primary)] px-2 uppercase text-white transition-colors duration-500 hover:bg-sky-800 hover:text-white md:col-auto md:mt-0">
               Замовлення підтверджую
             </button> */}
             <button
@@ -152,7 +152,7 @@ const Checkout = () => {
               type="submit"
               form="checkout-form"
               disabled={!isFormValid}
-              className="mt-4 h-14 w-full rounded-lg bg-blue-600 uppercase text-white hover:bg-sky-800 disabled:bg-sky-700"
+              className="mt-4 h-14 w-full rounded-lg bg-[var(--main-primary)] uppercase text-white hover:bg-[var(--main-primary)] disabled:bg-[var(--main-dark)]"
             >
               ЗАМОВЛЕННЯ ПІДТВЕДЖУЮ
             </button>
