@@ -2,8 +2,8 @@ import { NextResponse } from "next/server"
 
 export const dynamic = "force-dynamic"
 
-const API_URL = process.env.NEXT_PUBLIC_NOVA_POSHTA_URL!
-const API_KEY = process.env.NEXT_PUBLIC_NOVA_POSHTA_API_KEY!
+const API_URL = process.env.NOVA_POSHTA_URL!
+const API_KEY = process.env.NOVA_POSHTA_API_KEY!
 
 export async function POST(req: Request) {
   try {
