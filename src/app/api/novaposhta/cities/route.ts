@@ -22,8 +22,6 @@ export async function POST(req: Request) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       },
       body: JSON.stringify({
         apiKey: API_KEY,
@@ -38,12 +36,19 @@ export async function POST(req: Request) {
 
     console.log("DATA: ", data)
 
-    if (!data.data.length) {
+    if (!data.length) {
       return NextResponse.json({ message: "City not found" }, { status: 404 })
+    }
+    if (!data.success) {
+      return NextResponse.json(
+        { message: data.errors?.join(", ") || "Nova Poshta error" },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json(data.data, { status: 200 })
-  } catch (error) {
-    return NextResponse.json({ error }, { status: 500 })
+  } catch (error: unknown) {
+    console.error("API Error:", error)
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
   }
 }
