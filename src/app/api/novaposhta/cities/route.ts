@@ -9,6 +9,8 @@ export async function POST(req: Request) {
   try {
     const { cityName } = await req.json()
 
+    console.log("cityName:", cityName)
+
     if (!cityName) {
       return NextResponse.json(
         { message: "City name is required" },
@@ -31,7 +33,10 @@ export async function POST(req: Request) {
       }),
     })
 
+
     const data = await response.json()
+
+    console.log("DATA: ", data)
 
     if (!data.data.length) {
       return NextResponse.json({ message: "City not found" }, { status: 404 })
