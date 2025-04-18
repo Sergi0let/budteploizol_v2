@@ -520,7 +520,9 @@ const CheckoutForm = forwardRef<
           <div
             className={`my-1 flex h-4 items-center text-xs text-zinc-800 opacity-0 transition-opacity duration-500 lg:text-base ${isContactInfoValid && "h-9 opacity-100"}`}
           >
-            {`${formData.lastname} / ${formData.name} / ${formData.phone} / ${formData.mail}`}
+            {isContactInfoValid &&
+              activeSection !== "contact-info" &&
+              `${formData.lastname} / ${formData.name} / ${formData.phone} / ${formData.mail}`}
           </div>
         </summary>
       </details>
@@ -635,7 +637,7 @@ const CheckoutForm = forwardRef<
               handleOpenSection("contact-info", "delivery-info", e)
             }
             disabled={!isContactInfoValid}
-            className={`col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg px-2 uppercase text-white transition-colors duration-500 md:mt-4 ${
+            className={`my-3 mb-6 flex h-10 w-full max-w-[220px] items-center justify-center rounded-lg px-1 text-sm text-white transition-colors duration-500 md:mt-4 ${
               isContactInfoValid
                 ? "bg-[var(--main-primary)] hover:bg-[var(--main-dark)]"
                 : "cursor-not-allowed bg-[var(--secondary-light)] !text-[var(--main-primary)]"
@@ -681,7 +683,9 @@ const CheckoutForm = forwardRef<
           <div
             className={`my-1 flex h-4 items-center text-xs text-zinc-800 opacity-0 transition-opacity duration-500 lg:text-base ${isDeliveryInfoValid && "h-9 opacity-100"}`}
           >
-            {formatDeliveryInfoSummary()}
+            {isDeliveryInfoValid &&
+              activeSection !== "delivery-info" &&
+              formatDeliveryInfoSummary()}
             {/* {`${formData.deliveryType} / ${formData.deliveryCity || ""} / ${formData.deliveryAddress}`} */}
           </div>
         </summary>
@@ -953,7 +957,7 @@ const CheckoutForm = forwardRef<
 
       {/* Comment Section */}
       <div className="input-group mb-2 mt-4">
-        <label htmlFor="comment-field">Коментарь до замовлення</label>
+        <label htmlFor="comment-field">Коментар до замовлення</label>
         <textarea
           name="comment"
           id="comment-field"
