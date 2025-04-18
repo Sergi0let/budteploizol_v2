@@ -10,12 +10,12 @@ const Layout = ({
     <>
       <header className="container mx-auto max-w-7xl">
         <div className="px-4 py-4 text-left">
-          <Link href="/" className="block h-auto max-w-36">
+          <Link href="/" className="mx-auto block h-auto max-w-[100px]">
             <Image
               className="size-full object-cover"
               src="/logo/logo-main.png"
-              width={180}
-              height={46}
+              width={100}
+              height={69}
               alt="Logo"
             />
             <span className="sr-only">Головна</span>

@@ -5,9 +5,9 @@
 :root {
   --main-primary: #f8951d; /* + */
   --main-secondary: #ffae4a; /* + */
-  --main-light: #ffc073;
+  --main-light: #ffc073; /* + */
   --main-dark: #d97a06;
-  --main-darker: #a15900;
+  --main-darker: #a15900; /* + */
 
   --secondary-primary: #f8be1d;
   --secondary-secondary: #ffda73; /* + */
@@ -16,7 +16,7 @@
   --secondary-darker: #a17600;
 
   --tetriary-primary: #1a6d9e;
-  --tetriary-secondary: #5c9abf;
+  --tetriary-secondary: #5c9abf; /* + */
   --tetriary-light: #377ea8;
   --tetriary-dark: #0a5582;
   --tetriary-darker: #054367;

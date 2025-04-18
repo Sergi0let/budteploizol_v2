@@ -20,7 +20,7 @@ import {
   SubCategorySoundproofing,
   SubCategorySoundproofingDisplayNames,
 } from "@/types";
-import { Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,17 +34,17 @@ export const MenuSide = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="sticky top-0">
-          <figure className="flex h-14 w-full items-center px-2 pt-2">
+          <figure className="flex w-full items-center px-2 pt-2">
             <Image
               src="/logo/logo-main.png"
-              width={120}
-              height={31}
-              alt="logo budteploizol"
+              width={68}
+              height={47}
+              alt="Лого будтеплоізоляційного заводу"
             />
           </figure>
 
           <Separator className="mt-0 block xl:hidden" />
-          <SheetTitle className="block px-4 text-base font-semibold xl:hidden">
+          <SheetTitle className="block px-4 pt-4 text-base font-semibold md:text-2xl xl:hidden">
             Категорії товарів
           </SheetTitle>
           <ul className="block xl:hidden">
@@ -53,17 +53,18 @@ export const MenuSide = () => {
                 return (
                   <>
                     <details
-                      className="accordion-details border-b"
+                      className="accordion-details group border-b"
                       name="contact-info"
                     >
                       <summary
                         role="term"
-                        aria-details="contact-info border-b border-zinc-200"
-                        className="accordion-summary outline-none"
+                        aria-details="contact-info"
+                        className="accordion-summary relative outline-none"
                       >
-                        <div className="px-4 py-2 text-base uppercase transition-colors hover:bg-[var(--main-primary)] hover:text-white">
+                        <div className="flex-1 px-4 py-2 text-base uppercase transition-colors hover:bg-[var(--main-primary)] hover:text-white group-open:bg-[var(--tetriary-secondary)] group-open:text-white">
                           {link.name}
                         </div>
+                        <ChevronDown className="absolute right-4 top-1/3 ml-2 size-5 transform transition-transform duration-300 group-open:rotate-180 group-open:text-white group-hover:text-white" />
                       </summary>
                     </details>
                     <div
@@ -145,10 +146,10 @@ export const MenuSide = () => {
             })}
           </ul>
 
-          <SheetTitle className="font-semisbold px-4 text-base">
+          <SheetTitle className="font-semisbold px-4 pt-4 text-base md:text-2xl">
             Контакти компанії
           </SheetTitle>
-          <ul className="pl-4">
+          <ul className="pl-4 md:space-y-3">
             {contactsData.map((contact: ContactEntityType) => (
               <li key={contact.id}>
                 <a
