@@ -8,7 +8,7 @@ import {
   ProductType,
   SubCategoryRolls,
   SubCategorySoundproofing,
-} from "@/types";
+} from "@/types"
 
 export const pageLinks: CategoryLinksType[] = [
   {
@@ -26,7 +26,7 @@ export const pageLinks: CategoryLinksType[] = [
     name: "Документація",
     url: "/",
   },
-];
+]
 
 export const contactsData: ContactEntityType[] = [
   {
@@ -57,7 +57,7 @@ export const contactsData: ContactEntityType[] = [
 
     typeContact: ContactType.Viber,
   },
-];
+]
 
 export const contactPrefix: { [key in ContactType]: string } = {
   [ContactType.Phone]: "tel:",
@@ -66,7 +66,7 @@ export const contactPrefix: { [key in ContactType]: string } = {
   [ContactType.Whatsapp]: "https://wa.me/",
   [ContactType.Telegram]: "https://t.me/",
   [ContactType.Viber]: "viber://chat?number=",
-};
+}
 
 export const products: ProductType[] = [
   {
@@ -3311,7 +3311,7 @@ export const products: ProductType[] = [
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
   },
-];
+]
 
 export const deliveryData: DeliveryInfoType[] = [
   {
@@ -3322,14 +3322,7 @@ export const deliveryData: DeliveryInfoType[] = [
     time: "1-5 днів",
     cost: "За тарифами перевізника",
   },
-  // {
-  //   id: "2",
-  //   imgUrl: "/logo/ukrposhta.webp",
-  //   name: "Укрпошта",
-  //   type: "До відділення",
-  //   time: "1-5 днів",
-  //   cost: "За тарифами перевізника",
-  // },
+
   {
     id: "3",
     imgUrl: "/icons/lorry.svg",
@@ -3338,4 +3331,4 @@ export const deliveryData: DeliveryInfoType[] = [
     time: "1-2 днів",
     cost: "Безкоштовно",
   },
-];
+]

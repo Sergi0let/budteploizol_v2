@@ -1,16 +1,15 @@
+import config from '@/config'
 import { NextResponse } from "next/server"
 
 export const dynamic = "force-dynamic"
 
-const API_URL = process.env.NOVA_POSHTA_URL!
-const API_KEY = process.env.NOVA_POSHTA_API_KEY!
+const API_URL = config.env.novaPoshta.apiEndpoint
+const API_KEY = config.env.novaPoshta.apiKey
 
 export async function POST(req: Request) {
-  console.log("API_Url: ", API_KEY)
-  console.log("API_URL: ", API_URL)
+
   try {
     const { cityName } = await req.json()
-    console.log("cityName:", cityName)
 
     if (!cityName) {
       return NextResponse.json({ message: "City name is required" }, { status: 400 })
@@ -35,7 +34,6 @@ export async function POST(req: Request) {
     })
 
     const data = await response.json()
-    console.log("Nova Poshta API response:", data)
 
     if (!data.success) {
       return NextResponse.json(

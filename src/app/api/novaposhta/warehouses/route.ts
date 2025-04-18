@@ -1,9 +1,12 @@
+import config from '@/config'
 import { NextResponse } from "next/server"
+export const dynamic = "force-dynamic"
 
-const API_URL = process.env.NOVA_POSHTA_API_KEY!
-const API_KEY = process.env.NOVA_POSHTA_API_KEY!
+const API_URL = config.env.novaPoshta.apiEndpoint
+const API_KEY = config.env.novaPoshta.apiKey
 
 export async function POST(req: Request) {
+
   try {
     const { cityRef, searchNumber } = await req.json()
 
@@ -12,6 +15,11 @@ export async function POST(req: Request) {
         { message: "City Ref is required" },
         { status: 400 },
       )
+    }
+
+    if (!API_URL || !API_KEY) {
+      console.error("Missing Nova Poshta API configuration")
+      return NextResponse.json({ message: "Server configuration error" }, { status: 500 })
     }
 
     const methodProperties: Record<string, string | number> = {
@@ -26,8 +34,6 @@ export async function POST(req: Request) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       },
       body: JSON.stringify({
         apiKey: API_KEY,
@@ -39,14 +45,19 @@ export async function POST(req: Request) {
 
     const data = await response.json()
 
-    if (searchNumber) {
-      return NextResponse.json(data.data, { status: 200 })
+    if (!data.success) {
+      return NextResponse.json(
+        { message: data.errors?.join(", ") || "Nova Poshta API error" },
+        { status: 500 }
+      )
     }
 
-    return NextResponse.json(data.data, { status: 200 })
+    return NextResponse.json(data.data || [], { status: 200 })
+
   } catch (error) {
+    console.error("API Error:", error)
     return NextResponse.json(
-      { error: "Internal Server Error" + error },
+      { error: "Internal Server Error" },
       { status: 500 },
     )
   }

@@ -29,9 +29,7 @@ const useNovaPoshta = () => {
           body: JSON.stringify({ cityName }),
         },
       )
-      console.log("Response:", response)
       const data = await response.json()
-      console.log("Data:", data)
       setCities(data || [])
       setShowDropdown(true)
       setWarehouseNumber("")
