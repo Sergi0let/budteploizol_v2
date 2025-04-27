@@ -637,7 +637,7 @@ const CheckoutForm = forwardRef<
               handleOpenSection("contact-info", "delivery-info", e)
             }
             disabled={!isContactInfoValid}
-            className={`my-3 mb-6 flex h-10 w-full max-w-[220px] items-center justify-center rounded-lg px-1 text-sm text-white transition-colors duration-500 md:mt-4 ${
+            className={`my-3 mb-6 flex h-10 w-full max-w-[240px] items-center justify-center rounded-lg px-1 text-sm text-white transition-colors duration-500 md:mt-4 ${
               isContactInfoValid
                 ? "bg-[var(--main-primary)] hover:bg-[var(--main-dark)]"
                 : "cursor-not-allowed bg-[var(--secondary-light)] !text-[var(--main-primary)]"
@@ -871,7 +871,7 @@ const CheckoutForm = forwardRef<
               handleOpenSection("delivery-info", "payment-info", e)
             }
             disabled={!isDeliveryInfoValid}
-            className={`col-span-2 my-3 mb-6 flex h-14 w-full max-w-72 items-center justify-center rounded-lg px-2 uppercase text-white transition-colors duration-500 md:mt-4 ${
+            className={`my-3 mb-6 flex h-10 w-full max-w-[240px] items-center justify-center rounded-lg px-1 text-sm text-white transition-colors duration-500 md:mt-4 ${
               isDeliveryInfoValid
                 ? "bg-[var(--main-primary)] hover:bg-[var(--main-dark)]"
                 : "cursor-not-allowed bg-[var(--secondary-light)] !text-[var(--main-primary)]"

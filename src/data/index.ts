@@ -8,7 +8,7 @@ import {
   ProductType,
   SubCategoryRolls,
   SubCategorySoundproofing,
-} from "@/types"
+} from "@/types";
 
 export const pageLinks: CategoryLinksType[] = [
   {
@@ -26,7 +26,7 @@ export const pageLinks: CategoryLinksType[] = [
     name: "Документація",
     url: "/",
   },
-]
+];
 
 export const contactsData: ContactEntityType[] = [
   {
@@ -57,7 +57,7 @@ export const contactsData: ContactEntityType[] = [
 
     typeContact: ContactType.Viber,
   },
-]
+];
 
 export const contactPrefix: { [key in ContactType]: string } = {
   [ContactType.Phone]: "tel:",
@@ -66,7 +66,7 @@ export const contactPrefix: { [key in ContactType]: string } = {
   [ContactType.Whatsapp]: "https://wa.me/",
   [ContactType.Telegram]: "https://t.me/",
   [ContactType.Viber]: "viber://chat?number=",
-}
+};
 
 export const products: ProductType[] = [
   {
@@ -84,7 +84,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 8365, withVAT: 10038 },
       retail: { withoutVAT: 10875, withVAT: 13050 },
     },
-    image: ["IMG_6052.webp", "IMG_6055.webp", "IMG_6059.webp"],
+    image: ["IMG_6055.webp", "IMG_6052.webp", "IMG_6059.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -143,7 +143,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 3090, withVAT: 3708 },
       retail: { withoutVAT: 4020, withVAT: 4824 },
     },
-    image: ["IMG_6099.webp", "IMG_6104.webp"],
+    image: ["IMG_6104.webp", "IMG_6099.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -221,7 +221,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 3220, withVAT: 3864 },
       retail: { withoutVAT: 419, withVAT: 5028 },
     },
-    image: ["IMG_6119.webp", "IMG_6121.webp", "IMG_6125.webp"],
+    image: ["IMG_6125.webp", "IMG_6119.webp", "IMG_6121.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -306,7 +306,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 2959, withVAT: 35508 },
       retail: { withoutVAT: 3847, withVAT: 46164 },
     },
-    image: ["IMG_6278.webp", "IMG_6282.webp", "IMG_6284.webp"],
+    image: ["IMG_6282.webp", "IMG_6278.webp", "IMG_6284.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -326,7 +326,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 22515, withVAT: 27018 },
       retail: { withoutVAT: 35124, withVAT: 35124 },
     },
-    image: ["IMG_6278.webp", "IMG_6282.webp", "IMG_6284.webp"],
+    image: ["IMG_6284.webp", "IMG_6278.webp", "IMG_6282.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -346,7 +346,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 13595, withVAT: 16314 },
       retail: { withoutVAT: 17675, withVAT: 21210 },
     },
-    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp"],
+    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -366,7 +366,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 9675, withVAT: 11610 },
       retail: { withoutVAT: 12580, withVAT: 15096 },
     },
-    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp"],
+    image: ["IMG_6194.webp", "IMG_6190.webp", "IMG_6191.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -386,7 +386,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 6720, withVAT: 8064 },
       retail: { withoutVAT: 8740, withVAT: 10488 },
     },
-    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp"],
+    image: ["IMG_6191.webp", "IMG_6190.webp", "IMG_6194.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -406,7 +406,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 12155, withVAT: 14586 },
       retail: { withoutVAT: 15805, withVAT: 18966 },
     },
-    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp"],
+    image: ["IMG_6194.webp", "IMG_6190.webp", "IMG_6191.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -426,7 +426,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 21735, withVAT: 26082 },
       retail: { withoutVAT: 28260, withVAT: 33912 },
     },
-    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp"],
+    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -446,7 +446,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 19305, withVAT: 23166 },
       retail: { withoutVAT: 25100, withVAT: 30120 },
     },
-    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp"],
+    image: ["IMG_6213.webp", "IMG_6216.webp", "IMG_6217.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -466,7 +466,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 17375, withVAT: 20850 },
       retail: { withoutVAT: 22590, withVAT: 27108 },
     },
-    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp"],
+    image: ["IMG_6226.webp", "IMG_6220.webp", "IMG_6229.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -486,7 +486,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 15445, withVAT: 18534 },
       retail: { withoutVAT: 20080, withVAT: 24096 },
     },
-    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp"],
+    image: ["IMG_6240.webp", "IMG_6242.webp", "IMG_6247.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -506,7 +506,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 22740, withVAT: 27288 },
       retail: { withoutVAT: 29565, withVAT: 35478 },
     },
-    image: ["IMG_6220.webp", "IMG_6226.webp", "IMG_6229.webp"],
+    image: ["IMG_6229.webp", "IMG_6220.webp", "IMG_6226.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -546,7 +546,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 23085, withVAT: 27702 },
       retail: { withoutVAT: 30015, withVAT: 36018 },
     },
-    image: ["IMG_6332.webp", "IMG_6335.webp", "IMG_6338.webp"],
+    image: ["IMG_6338.webp", "IMG_6332.webp", "IMG_6335.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -566,7 +566,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 27500, withVAT: 33000 },
       retail: { withoutVAT: 35750, withVAT: 42900 },
     },
-    image: ["IMG_6332.webp", "IMG_6335.webp", "IMG_6338.webp"],
+    image: ["IMG_6335.webp", "IMG_6332.webp", "IMG_6338.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -586,7 +586,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 10110, withVAT: 12132 },
       retail: { withoutVAT: 13145, withVAT: 15774 },
     },
-    image: ["IMG_6306.webp", "IMG_6309.webp", "IMG_6311.webp"],
+    image: ["IMG_6306.webp", "IMG_6309.webp", "IMG_6311.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -606,7 +606,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 12918, withVAT: 12918 },
       retail: { withoutVAT: 16794, withVAT: 16794 },
     },
-    image: ["IMG_6184.webp", "IMG_6168.webp", "IMG_6171.webp"],
+    image: ["IMG_6184.webp", "IMG_6168.webp", "IMG_6171.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -626,7 +626,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 13750, withVAT: 16500 },
       retail: { withoutVAT: 17875, withVAT: 21450 },
     },
-    image: ["IMG_6268.webp", "IMG_6273.webp", "IMG_6276.webp"],
+    image: ["IMG_6268.webp", "IMG_6273.webp", "IMG_6276.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -3311,7 +3311,7 @@ export const products: ProductType[] = [
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
   },
-]
+];
 
 export const deliveryData: DeliveryInfoType[] = [
   {
@@ -3331,4 +3331,4 @@ export const deliveryData: DeliveryInfoType[] = [
     time: "1-2 днів",
     cost: "Безкоштовно",
   },
-]
+];
