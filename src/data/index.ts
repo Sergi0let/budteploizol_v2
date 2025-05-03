@@ -19,12 +19,12 @@ export const pageLinks: CategoryLinksType[] = [
   {
     id: 6,
     name: "Контакти",
-    url: "/",
+    url: "/contacts",
   },
   {
     id: 7,
     name: "Документація",
-    url: "/",
+    url: "/docs",
   },
 ];
 
@@ -346,7 +346,14 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 13595, withVAT: 16314 },
       retail: { withoutVAT: 17675, withVAT: 21210 },
     },
-    image: ["IMG_6190.webp", "IMG_6191.webp", "IMG_6194.webp", "IMG_6155.webp"],
+    image: [
+      "IMG_6168.webp",
+      "IMG_6171.webp",
+      "IMG_6173.webp",
+      "IMG_6178.webp",
+      "IMG_6182.webp",
+      "IMG_6155.webp",
+    ],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -366,7 +373,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 9675, withVAT: 11610 },
       retail: { withoutVAT: 12580, withVAT: 15096 },
     },
-    image: ["IMG_6194.webp", "IMG_6190.webp", "IMG_6191.webp", "IMG_6155.webp"],
+    image: ["IMG_6230.webp", "IMG_6234.webp", "IMG_6238.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -386,7 +393,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 6720, withVAT: 8064 },
       retail: { withoutVAT: 8740, withVAT: 10488 },
     },
-    image: ["IMG_6191.webp", "IMG_6190.webp", "IMG_6194.webp", "IMG_6155.webp"],
+    image: ["IMG_6230.webp", "IMG_6234.webp", "IMG_6238.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -406,7 +413,7 @@ export const products: ProductType[] = [
       minimum: { withoutVAT: 12155, withVAT: 14586 },
       retail: { withoutVAT: 15805, withVAT: 18966 },
     },
-    image: ["IMG_6194.webp", "IMG_6190.webp", "IMG_6191.webp", "IMG_6155.webp"],
+    image: ["IMG_6213.webp", "IMG_6216.webp", "IMG_6217.webp", "IMG_6155.webp"],
     bestSales: false,
     isAvailable: true,
     discount: { percentage: 0, validUntil: null },
@@ -866,7 +873,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/03 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/03 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -882,7 +889,7 @@ export const products: ProductType[] = [
     id: "rolls-2",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/04 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/04 сіре",
     description: SubCategoryRolls.OdnostronneFolhuvannya,
     unit: "м²",
     price: {
@@ -898,7 +905,7 @@ export const products: ProductType[] = [
     id: "rolls-3",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/05 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/05 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -914,7 +921,7 @@ export const products: ProductType[] = [
     id: "rolls-4",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/06 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/06 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -930,7 +937,7 @@ export const products: ProductType[] = [
     id: "rolls-5",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/07 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/07 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -946,7 +953,7 @@ export const products: ProductType[] = [
     id: "rolls-6",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/08 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/08 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -962,7 +969,7 @@ export const products: ProductType[] = [
     id: "rolls-7",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/09 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/09 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -978,7 +985,7 @@ export const products: ProductType[] = [
     id: "rolls-8",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/10 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/10 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -994,7 +1001,7 @@ export const products: ProductType[] = [
     id: "rolls-9",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/12 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/12 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -1010,7 +1017,7 @@ export const products: ProductType[] = [
     id: "rolls-10",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/15 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/15 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -1026,7 +1033,7 @@ export const products: ProductType[] = [
     id: "rolls-11",
     category: Category.Rolls,
     groupName: SubCategoryRolls.OdnostronneFolhuvannya,
-    name: "Полотно А 25/20 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 25/20 сіре",
     description: "Полотно з одностороннім фольгуванням",
     unit: "м²",
     price: {
@@ -1043,7 +1050,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/03 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1061,7 +1068,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/04 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1079,7 +1086,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/05 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1097,7 +1104,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/06 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1115,7 +1122,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/07 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1133,7 +1140,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/08 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1151,7 +1158,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/09 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1169,7 +1176,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/10 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1187,7 +1194,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/12 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1205,7 +1212,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/15 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1223,7 +1230,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.DvostronneFolhuvannya,
-    name: "Полотно АА 25/20 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 25/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -1241,7 +1248,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/03 сіре",
+    name: "Полотно з клейовим шаром 25/03 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1258,7 +1265,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/04 сіре",
+    name: "Полотно з клейовим шаром 25/04 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1275,7 +1282,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/05 сіре",
+    name: "Полотно з клейовим шаром 25/05 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1292,7 +1299,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/06 сіре",
+    name: "Полотно з клейовим шаром 25/06 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1309,7 +1316,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/07 сіре",
+    name: "Полотно з клейовим шаром 25/07 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1326,7 +1333,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/08 сіре",
+    name: "Полотно з клейовим шаром 25/08 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1343,7 +1350,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/09 сіре",
+    name: "Полотно з клейовим шаром 25/09 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1360,7 +1367,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/10 сіре",
+    name: "Полотно з клейовим шаром 25/10 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1377,7 +1384,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/12 сіре",
+    name: "Полотно з клейовим шаром 25/12 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1394,7 +1401,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/15 сіре",
+    name: "Полотно з клейовим шаром 25/15 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1411,7 +1418,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.KleyovyyShar,
-    name: "Полотно К 25/20 сіре",
+    name: "Полотно з клейовим шаром 25/20 сіре",
     description: "Полотно з клейовим шаром",
     unit: "м²",
     price: {
@@ -1428,7 +1435,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/03 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1446,7 +1453,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/04 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1464,7 +1471,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/05 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1482,7 +1489,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/06 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1500,7 +1507,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/07 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1518,7 +1525,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/08 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1536,7 +1543,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/09 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1554,7 +1561,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/10 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1572,7 +1579,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/12 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1590,7 +1597,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/15 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -1608,7 +1615,7 @@ export const products: ProductType[] = [
     category: Category.Rolls,
     productType: ProductCategory.BUILDING,
     groupName: SubCategoryRolls.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 25/20 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 25/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2326,7 +2333,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/03 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2344,7 +2351,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/04 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2362,7 +2369,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/05 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2380,7 +2387,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/06 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2398,7 +2405,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/07 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2416,7 +2423,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/08 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2434,7 +2441,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/09 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2452,7 +2459,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/10 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2470,7 +2477,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/12 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2488,7 +2495,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/15 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2506,7 +2513,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannya,
-    name: "Полотно А 30/20 сіре",
+    name: "Полотно ОДНОСТОРОННЄ ФОЛЬГУВАННЯ 30/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням Полотно із хімічно зшитого спіненого поліетилену з одностороннім покриттям із полірованої алюмінієвої фольги. Забезпечує високий рівень тепло-, паро- та звукоізоляції, ефективно відбиває теплову енергію. Матеріал не вбирає вологу, має тривалий термін експлуатації. Використовується для утеплення покрівель, фасадів, стін лазень і саун, опалювальних систем та трубопроводів. При монтажі під теплу підлогу рекомендується захист фольги поліетиленовою плівкою.",
     unit: "м²",
@@ -2524,7 +2531,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/03 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2542,7 +2549,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/04 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2560,7 +2567,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/05 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2578,7 +2585,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/06 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2596,7 +2603,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/07 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2614,7 +2621,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/08 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2632,7 +2639,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/09 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2650,7 +2657,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/10 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2668,7 +2675,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/12 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2686,7 +2693,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/15 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2704,7 +2711,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.DvostronneFolhuvannya,
-    name: "Полотно АА 30/20 сіре",
+    name: "Полотно ДВОСТОРОННЄ ФОЛЬГУВАННЯ 30/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з двостороннім фольгуванням Полотно зі спіненого поліетилену з алюмінієвим покриттям з обох боків. Має високі тепло-, паро- та звукоізоляційні властивості завдяки подвійній фользі, яка ефективно відбиває тепло. Матеріал створює стабільний мікроклімат, вологостійкий, захищає від радону. Використовується для утеплення дахів, стін лазень, саун, ємностей і трубопроводів із температурою носія до 110°С. Для теплої підлоги необхідно використовувати захисну поліетиленову плівку.",
     unit: "м²",
@@ -2722,7 +2729,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/03 сіре",
+    name: "Полотно з клейовим шаром 30/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2740,7 +2747,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/04 сіре",
+    name: "Полотно з клейовим шаром 30/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2758,7 +2765,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/05 сіре",
+    name: "Полотно з клейовим шаром 30/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2776,7 +2783,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/06 сіре",
+    name: "Полотно з клейовим шаром 30/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2794,7 +2801,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/07 сіре",
+    name: "Полотно з клейовим шаром 30/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2812,7 +2819,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/08 сіре",
+    name: "Полотно з клейовим шаром 30/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2830,7 +2837,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/09 сіре",
+    name: "Полотно з клейовим шаром 30/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2848,7 +2855,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/10 сіре",
+    name: "Полотно з клейовим шаром 30/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2866,7 +2873,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/12 сіре",
+    name: "Полотно з клейовим шаром 30/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2884,7 +2891,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/15 сіре",
+    name: "Полотно з клейовим шаром 30/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2902,7 +2909,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.KleyovyyShar,
-    name: "Полотно К 30/20 сіре",
+    name: "Полотно з клейовим шаром 30/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з липким шаром Полотно зі спіненого поліетилену, оснащене якісним клейовим шаром із захисною лавсановою плівкою. Дозволяє швидко і зручно монтувати матеріал навіть у важкодоступних місцях без додаткових кріплень. Ідеальне рішення для тепло- та шумоізоляції систем кондиціонування, вентиляції, автомобільної шумоізоляції, трубопроводів. Перед монтажем поверхню необхідно знежирити, а для кращої адгезії рекомендується нагрів матеріалу феном.",
     unit: "м²",
@@ -2920,7 +2927,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/03 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/03 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -2938,7 +2945,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/04 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/04 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -2956,7 +2963,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/05 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/05 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -2974,7 +2981,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/06 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/06 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -2992,7 +2999,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/07 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/07 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3010,7 +3017,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/08 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/08 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3028,7 +3035,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/09 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/09 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3046,7 +3053,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/10 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/10 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3064,7 +3071,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/12 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/12 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3082,7 +3089,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/15 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/15 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",
@@ -3100,7 +3107,7 @@ export const products: ProductType[] = [
     category: Category.Soundproofing,
     productType: ProductCategory.BUILDING,
     groupName: SubCategorySoundproofing.OdnostronneFolhuvannyaKley,
-    name: "Полотно АК 30/20 сіре",
+    name: "Полотно з одностороннім фольгуванням та клейовим шаром 30/20 сіре",
     description:
       "Полотно ППЕ Budteploizol з одностороннім фольгуванням та клейким шаром Полотно зі спіненого поліетилену з одностороннім фольгованим покриттям та клейким шаром. Має високі тепло-, паро- та звукоізоляційні властивості, забезпечує ефективне відбиття тепла. Завдяки клейовому шару швидко монтується без додаткових засобів кріплення. Використовується для утеплення покрівель, фасадів, трубопроводів, систем вентиляції, кондиціювання та автомобільної шумоізоляції. Перед монтажем поверхню потрібно очистити і знежирити.",
     unit: "м²",

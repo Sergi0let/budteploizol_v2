@@ -82,7 +82,6 @@ export const Footer = () => {
         <div>
           <sup>©</sup> «Budteploizol», 2022-{new Date().getFullYear()}
         </div>
-        <div>розроблено Вашкевич С.</div>
       </div>
     </footer>
   );

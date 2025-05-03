@@ -145,7 +145,7 @@ export const SubCategorySoundproofingDescriptions: Record<
 } as const;
 
 export const CategoryDisplayNames: { [key in Category]: string } = {
-  [Category.Soundproofing]: "Звукоізоляційні матеріали",
+  [Category.Soundproofing]: "Полотно для виготовлення устілок та взуття",
   [Category.Mats]: "Спортивні мати",
   [Category.Rolls]: "Ізоляційні рулони",
   [Category.Kulumki]: "Килимки",
@@ -153,7 +153,7 @@ export const CategoryDisplayNames: { [key in Category]: string } = {
 };
 
 export const CategoryTitles: { [key in Category]: string } = {
-  [Category.Soundproofing]: "Матеріали для звукоізоляції",
+  [Category.Soundproofing]: "Матеріали для виготовлення устілок і взуття",
   [Category.Mats]: "Спортивні мати для фітнесу, йоги, пілатесу",
   [Category.Rolls]: "Ізоляційні рулони",
   [Category.Kulumki]: "Килимки для туризму, спорту, фітнесу",
