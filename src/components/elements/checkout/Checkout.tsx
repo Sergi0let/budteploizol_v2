@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { CheckoutForm } from "./CheckoutForm";
 
 const Checkout = () => {
-  const { cartItems } = useShopingCart();
+  const { cartItems, clearCart, setOpenCart } = useShopingCart();
   const { cartProducts = [], cartTotalPrice = 0 } =
     useGetItemsFromCart(cartItems, products) || {};
 
@@ -77,6 +77,7 @@ const Checkout = () => {
 
         if (response.ok) {
           router.replace("/order-success");
+          clearCart();
         } else {
           router.replace("/order-fail");
         }
@@ -85,6 +86,7 @@ const Checkout = () => {
         router.replace("/order-fail");
       } finally {
         setIsSubmitting(true);
+        setOpenCart(false);
       }
     }
   };

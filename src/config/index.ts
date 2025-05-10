@@ -6,10 +6,10 @@ const config = {
       apiEndpoint: process.env.NOVA_POSHTA_URL!,
     },
     mail: {
-      user: process.env.GMAIL_USER!,
-      appPassword: process.env.GMAIL_APP_PASSWORD!,
+      user: process.env.BUDTPLOIZOL_USER!,
+      appPassword: process.env.BUDTPLOIZOL_PASSWORD!,
     },
-  }
-}
+  },
+};
 
-export default config
+export default config;

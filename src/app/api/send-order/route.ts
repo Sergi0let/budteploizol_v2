@@ -1,23 +1,57 @@
-import config from '@/config'
-import { NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import config from "@/config";
+import { formatPrice } from "@/lib/utils";
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-const GMAIL_USER = config.env.mail.user
-const GMAIL_APP_PASSWORD = config.env.mail.appPassword
+const BUDTPLOIZOL_USER = config.env.mail.user;
+const BUDTPLOIZOL_PASSWORD = config.env.mail.appPassword;
 
 // Функція створення транспортера
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "mail.adm.tools", // smtp - сервер
+    port: 465, // порт 465 для SSL або 587 для TLS
+    secure: true, // true для порту 465 (SSL)
     auth: {
-      user: GMAIL_USER,
-      pass: GMAIL_APP_PASSWORD,
+      user: BUDTPLOIZOL_USER,
+      pass: BUDTPLOIZOL_PASSWORD,
     },
-  })
-}
+    logger: true, // 👈 виведе всі логі SMTP
+    debug: true, // 👈 теж корисне
+  });
+};
 
-// Функція для створення тексту листа для клієнта
-const createClientEmailText = ({
+const createItemsTable = (
+  items: { name: string; price: number; quantity: number }[],
+) => {
+  return `
+    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; font-family: sans-serif; font-size: 14px; width: 100%;">
+      <thead>
+        <tr>
+          <th align="left">Назва</th>
+          <th align="center">Кількість</th>
+          <th align="right">Ціна</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${items
+          .map(
+            (item) => `
+              <tr>
+                <td>${item.name}</td>
+                <td align="center">${item.quantity}</td>
+                <td align="right">${formatPrice(item.price)}</td>
+              </tr>
+            `,
+          )
+          .join("")}
+      </tbody>
+    </table>
+  `;
+};
+
+const createClientEmailHtml = ({
   name,
   lastname,
   phone,
@@ -26,28 +60,31 @@ const createClientEmailText = ({
   deliveryAddress,
   paymentType,
   comment,
-}: {
-  [key: string]: string
-}) => `
-Привіт, ${name} ${lastname}!
+  items,
+  totalPrice,
+}: any) => `
+  <div style="font-family: sans-serif; font-size: 16px; line-height: 1.5;">
+    <p>Привіт, <strong>${name} ${lastname}</strong>!</p>
+    <p>Дякуємо за ваше замовлення. Ми отримали вашу заявку і зв’яжемося з вами найближчим часом.</p>
+    <h3>Деталі замовлення:</h3>
+    <ul>
+      <li><strong>Телефон:</strong> ${phone}</li>
+      <li><strong>Email:</strong> ${mail}</li>
+      <li><strong>Тип доставки:</strong> ${deliveryType}</li>
+      <li><strong>Адреса доставки:</strong> ${deliveryAddress}</li>
+      <li><strong>Оплата:</strong> ${paymentType === "payNoCash" ? "Безготівкова" : paymentType}</li>
+      ${comment ? `<li><strong>Коментар:</strong> ${comment}</li>` : ""}
+    </ul>
+    <h3>Замовлені товари:</h3>
+    ${createItemsTable(items)}
+    <p style="margin-top: 10px; font-size: 18px;"><strong>Загальна сума: ${formatPrice(totalPrice)}</strong></p>
+    <hr />
+    <p style="font-size: 14px;">Якщо у вас є питання — не соромтесь, відповідайте на цей лист або зателефонуйте нам.</p>
+    <p style="color: gray; font-size: 13px;">БудьТеплоІзол — тепло не там, де гріє, а де не вивітрюється.</p>
+  </div>
+`;
 
-Дякуємо за ваше замовлення. Ми отримали вашу заявку і скоро з вами зв'яжемося для підтвердження.
-
-🛒 **Деталі замовлення:**
-- 📞 Телефон: ${phone}
-- ✉️ Email: ${mail}
-- 🚚 Тип доставки: ${deliveryType}
-- 📍 Адреса доставки: ${deliveryAddress}
-- 💳 Спосіб оплати: ${paymentType}
-${comment ? `- 📝 Коментар: ${comment}` : ""}
-
-Якщо у вас є запитання, звертайтеся до нашої служби підтримки.
-
-Дякуємо, що обрали нас! 😊
-`
-
-// Функція для створення тексту листа для адміністратора
-const createAdminEmailText = ({
+const createAdminEmailHtml = ({
   name,
   lastname,
   phone,
@@ -56,25 +93,31 @@ const createAdminEmailText = ({
   deliveryAddress,
   paymentType,
   comment,
-}: {
-  [key: string]: string
-}) => `
-🔔 **Нове замовлення від ${name} ${lastname}!**
-
-🛒 **Деталі замовлення:**
-- 📞 Телефон: ${phone}
-- ✉️ Email: ${mail}
-- 🚚 Тип доставки: ${deliveryType}
-- 📍 Адреса доставки: ${deliveryAddress}
-- 💳 Спосіб оплати: ${paymentType}
-${comment ? `- 📝 Коментар: ${comment}` : ""}
-
-Перевірте інформацію та підтвердіть замовлення клієнту.
-`
+  items,
+  totalPrice,
+}: any) => `
+  <div style="font-family: sans-serif; font-size: 16px; line-height: 1.5;">
+    <h2>🔔 Нове замовлення!</h2>
+    <p><strong>Клієнт:</strong> ${name} ${lastname}</p>
+    <ul>
+      <li><strong>Телефон:</strong> ${phone}</li>
+      <li><strong>Email:</strong> ${mail}</li>
+      <li><strong>Доставка:</strong> ${deliveryType}</li>
+      <li><strong>Адреса:</strong> ${deliveryAddress}</li>
+      <li><strong>Оплата:</strong> ${paymentType === "payNoCash" ? "Безготівкова" : paymentType}</li>
+      ${comment ? `<li><strong>Коментар:</strong> ${comment}</li>` : ""}
+    </ul>
+    <h3>Список товарів:</h3>
+    ${createItemsTable(items)}
+    <p style="margin-top: 10px; font-size: 18px;"><strong>Загальна сума: ${formatPrice(totalPrice)}</strong></p>
+    <hr />
+    <p style="font-size: 13px; color: gray;">Розраховуйся, дзвони, відвантажуй.</p>
+  </div>
+`;
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json()
+    const data = await req.json();
 
     // Перевіряємо, чи всі необхідні поля заповнені
     const requiredFields = [
@@ -85,46 +128,45 @@ export async function POST(req: Request) {
       "deliveryType",
       "deliveryAddress",
       "paymentType",
-    ]
+    ];
     if (requiredFields.some((field) => !data[field])) {
       return NextResponse.json(
         { message: "Please fill all required fields" },
         { status: 400 },
-      )
+      );
     }
 
-    const transporter = createTransporter()
+    const transporter = createTransporter();
 
-    // Параметри листів
     const clientMailOptions = {
-      from: GMAIL_USER,
+      from: BUDTPLOIZOL_USER,
       to: data.mail,
-      subject: "Ваше замовлення",
-      text: createClientEmailText(data),
-    }
+      subject: "Ваше замовлення — БудТеплоІзол",
+      html: createClientEmailHtml(data),
+    };
 
     const adminMailOptions = {
-      from: GMAIL_USER,
-      to: GMAIL_USER,
-      subject: "Нове замовлення!",
-      text: createAdminEmailText(data),
-    }
+      from: BUDTPLOIZOL_USER,
+      to: BUDTPLOIZOL_USER,
+      subject: `Нове замовлення від ${data.name} ${data.lastname}`,
+      html: createAdminEmailHtml(data),
+    };
 
     // Відправляємо обидва листи
     await Promise.all([
       transporter.sendMail(clientMailOptions),
       transporter.sendMail(adminMailOptions),
-    ])
+    ]);
 
     return NextResponse.json(
       { message: "Order sent successfully" },
       { status: 200 },
-    )
+    );
   } catch (error) {
-    console.error("Error sending email:", error)
+    console.error("Error sending email:", error);
     return NextResponse.json(
       { message: "An error occurred while sending the order" },
       { status: 500 },
-    )
+    );
   }
 }

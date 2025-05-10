@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --main-primary: #f8951d; /* + */
+  --main-primary: #ff6600; /* + */
   --main-secondary: #ffae4a; /* + */
   --main-light: #ffc073; /* + */
   --main-dark: #d97a06;
@@ -11,7 +11,7 @@
 
   --secondary-primary: #f8be1d;
   --secondary-secondary: #ffda73; /* + */
-  --secondary-light: #fcf3d9fc;
+  --secondary-light: #fef3dc;
   --secondary-dark: #cc9704; /* + */
   --secondary-darker: #a17600;
 

@@ -16,6 +16,7 @@ type ShopingCartContextType = {
   increaseItemQuantity: (id: number | string | string) => void;
   decreaseItemQuantity: (id: number | string | string) => void;
   removeItemFromCart: (id: number | string | string) => void;
+  clearCart: () => void;
 };
 
 type CartItem = {
@@ -80,6 +81,10 @@ export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
     });
   }
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <ShopingCartContext.Provider
       value={{
@@ -91,6 +96,7 @@ export function ShopingCartProvider({ children }: ShopingCartProviderProps) {
         increaseItemQuantity,
         decreaseItemQuantity,
         removeItemFromCart,
+        clearCart,
       }}
     >
       {children}
